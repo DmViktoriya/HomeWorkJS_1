@@ -550,8 +550,90 @@
 
 //Присвой переменной substring выражение создания подстроки длинной length символов (от начала) из строки string.
 
+//function getSubstring(string, length) {
+//  const substring = string.slice(0, length); // Change this line
+
+//  return substring;
+//}
 
 
+//Задание 33
+
+//Функция formatMessage(message, maxLength) принимает строку (параметр message) и форматирует её, если длина превышает значение в параметре maxLength.
+
+//Дополни код функции так, что если длина строки:
+
+//    не превышает maxLength, функция возвращает её в исходном виде.
+//    больше maxLength, то функция обрезает строку до maxLength символов и добавляет в конец троеточие "...", после чего возвращает укороченную версию.
+
+//function formatMessage(message, maxLength) {
+//  let result;
+  // Change code below this line
+//if (message.length <= maxLength) {result = message} else {result = `${message.slice(0, maxLength)}...`};
+  /// Change code above this line
+//  return result;
+//}
+//console.log(formatMessage("Curabitur ligula sapien", 16));
+
+
+//Задание 34
+
+//Функция normalizeInput(input) принимает строку (параметр input) и возвращает такую же строку, но в нижнем регистре. Присвой переменной normalizedInput выражение создания строки в нижнем регистре из параметра input.
+
+//function normalizeInput(input) {
+//  const normalizedInput = input.toLowerCase(); // Change this line
+
+//  return normalizedInput;
+//}
+//console.log(normalizeInput("Hello world"));
+//console.log(normalizeInput("This ISN'T SpaM"));
+//console.log(normalizeInput("Big SALE"));
+
+
+//Задание 35
+
+//Функция checkName(fullname, name) принимает два параметра и возвращает буль true или false - результат проверки вхождения подстроки name в строку fullname.
+
+//    fullname - полное имя состоящее из двух слов (имени и фамилии) разделённых пробелом.
+//    name - имя для проверки вхождения в полное имя.
+
+//Присвой переменной result выражение проверки вхождения имени (параметр name), в полное имя (параметр fullname). Пусть функция строго относится к регистру букв, то есть «Петя» и «петя» для неё разные имена.
+
+//function checkForName(fullName, name) {
+// const result = fullName.includes(name); // Change this line
+//  return result;
+//}
+//console.log(checkForName("Egor Kolbasov", "Egor"));
+//console.log(checkForName("Egor Kolbasov", "egor"));
+//console.log(checkForName("Egor Kolbasov", "egOr"));
+//console.log(checkForName("Egor Kolbasov", "Zhenya"));
+//console.log(checkForName("Vadim Nekrasov", "Vadim"));
+//console.log(checkForName("Vadim Nekrasov", "vadim"));
+//console.log(checkForName("Vadim Nekrasov", "Dima"));
+
+
+//Задание 36
+
+//Функция checkForSpam(message) принимает строку (параметр message), проверяет её на содержание запрещенных слов spam и sale, и возвращает результат проверки. Слова в строке параметра message могут быть в произвольном регистре, например SPAM или sAlE.
+
+//    Если нашли запрещенное слово (spam или sale) то функция возвращает буль true.
+//    Если в строке нет запрещенных слов, функция возвращает буль false.
+
+//function checkForSpam(message) {
+//  let result;
+  // Change code below this line
+//result = message.toLowerCase().includes("spam") || message.toLowerCase().includes("sale");
+ 
+  // Change code above this line
+//  return result;
+//}
+//console.log(checkForSpam("Latest technology news"));
+//console.log(checkForSpam("JavaScript weekly newsletter"));
+//console.log(checkForSpam("Get best sale offers now!"));
+//console.log(checkForSpam("Amazing SalE, only tonight!"));
+//console.log(checkForSpam("Trust me, this is not a spam message"));
+//console.log(checkForSpam("Get rid of sPaM emails. Our book in on sale!"));
+//console.log(checkForSpam("[SPAM] How to earn fast money?"));
 
 
 

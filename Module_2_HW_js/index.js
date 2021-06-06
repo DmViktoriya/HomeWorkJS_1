@@ -555,27 +555,31 @@
 
 //При выполнении этой задачи в теле функции includes() нельзя использовать метод массив.includes(значение).
 
-function includes(array, value) {
+
+
+//function includes(array, value) {
   // Change code below this line
-    let result;
-for (let element of array)
-{if (element === value)
-{  return true;
-  //result = true;
- //break;
-} 
- 
- else {
- result = false};
-}
-  return result;
+//  let result = true;
+//for (const element of array)
+//   if (array.indexOf(value) !== -1)
+//   {result = element !== value} 
+//  else {result = element === value}
+//  return result;
   // Change code above this line
-}
-console.log(includes([1, 2, 3, 4, 5], 3));
-console.log(includes([1, 2, 3, 4, 5], 17));
-console.log(includes(["Earth", "Mars", "Venus", "Jupiter", "Saturn"], "Jupiter"));
+//}
+//console.log(includes([1, 2, 3, 4, 5], 3));
+//console.log(includes([1, 2, 3, 4, 5], 17));
+//console.log(includes(["Earth", "Mars", "Venus", "Jupiter", "Saturn"], "Jupiter"));
 
-
-
+//function includes(array, value) {
+  // Change code below this line
+//  for (let element of array){
+//   if (element === value){
+//   return true
+//   } 
+//}
+//  return false
+  // Change code above this line
+//}
 
 

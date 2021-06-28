@@ -1,866 +1,554 @@
-//Задание 1
+//Задание 1 
 
-//Присвой переменной apartment объект описывающий квартиру со следующими характеристиками:
+//Измени код так, чтобы объект parent стал прототипом для объекта в переменной сhild.
 
-//    imgUrl - фотография, значение "https://via.placeholder.com/640x480";
-//    descr - описание, значение "Spacious apartment in the city center";
-//    rating - рейтинг, значение 4;
-//    price - цена, значение 2153;
-//    tags - метаинформация, массив ["premium", "promoted", "top"].
+// const parent = {
+//   name: 'Stacey',
+//   surname: 'Moore',
+//   age: 54,
+//   heritage: 'Irish'
+// };
+// // Пиши код ниже этой строки
 
-//const apartment = {
-//imgUrl: "https://via.placeholder.com/640x480",
-//descr: "Spacious apartment in the city center",
-//rating: 4,
-//price: 2153,
-//tags: ["premium", "promoted", "top"]
-//};
+// const child = Object.create(parent);
+
+
+// // Пиши код выше этой строки
+// child.name = 'Jason';
+// child.age = 27;
 
 
 //Задание 2
 
-//Дополни объект квартиры свойством owner, значением которого будет объект с информацией о владельце. Добавь ему следующие свойства:
+//Измени код, построив цепочку прототипов так, чтобы объект ancestor был прототипом для parent, а тот в свою очередь был прототипом для child.
 
-//    name - имя владельца, значение "Henry";
-//    phone - телефон, значение "982-126-1588";
-//    email - почта, значение "henry.carter@aptmail.com".
-
-//const apartment = {
-//    imgUrl: 'https://via.placeholder.com/640x480',
-//    descr: 'Spacious apartment in the city center',
-//    rating: 4,
-//    price: 2153,
-//    tags: ['premium', 'promoted', 'top'],
-//  	owner: {
-//     	name: "Henry",
-//    	phone: "982-126-1588",
-//    	email: "henry.carter@aptmail.com"
-//    },
-//  };
-
-
-//Задание 3
-
-//Дополни код присвоив объявленным переменным выражения обращения к соответствующим свойствам обьекта apartment.
-
-    // aptRating - рейтинг;
-    // aptDescr - описание;
-    // aptPrice - цена;
-    // aptTags - теги.
-
-// const apartment = {
-//   imgUrl: "https://via.placeholder.com/640x480",
-//   descr: "Spacious apartment in the city center",
-//   rating: 4,
-//   price: 2153,
-//   tags: ["premium", "promoted", "top"],
+// const ancestor = {
+//   name: 'Paul',
+//   age: 83,
+//   surname: 'Dawson',
+//   heritage: 'Irish'
 // };
+// // Пиши код ниже этой строки
 
-// // Change code below this line
-// const aptRating = apartment.rating;
-// const aptDescr = apartment.descr;
-// const aptPrice = apartment.price;
-// const aptTags = apartment.tags;
-// // Change code above this line
+// const parent = Object.create(ancestor);
+// parent.name = 'Stacey';
+// parent.surname = 'Moore';
+// parent.age = 54;
+
+// const child = Object.create(parent);
+// child.name = 'Jason';
+// child.age = 27;
+
+// // Пиши код выше этой строки
 
 
-// Задание 4
+// Задание 3
 
-// Дополни код присвоив объявленным переменным выражения обращения к соответствующим свойствам обьекта apartment.
+// Объяви функцию-конструктор Car которая принимает три параметра:
 
-//     ownerName - имя владельца;
-//     ownerPhone - телефон владельца;
-//     ownerEmail - почта владельца;
-//     numberOfTags - количество элементов массива в свойстве tags;
-//     firstTag - первый элемент массива в свойстве tags;
-//     lastTag - последний элемент массива в свойстве tags.
+//     brand - марка автомобиля.
+//     model - модель автомобиля.
+//     price - цена автомобиля.
+
+// Функция Car должна создавать объект с одноимёнными свойствами brand, model и price, значениями которых должны быть переданные аргументы во время её вызова с оператором new.
+
+// function Car(brand, model, price) {
+// this.brand = brand;
+//   this.model = model;
+//   this.price = price;
+// }
+
+
+//Задание 4
+
+//Выполни рефакторинг функции-конструктора Car так, чтобы она принимала один параметр - объект со свойсвами brand, model и price. Деструктуризируй объект в сигнатуре (подписи) функции.
+
+// function Car({brand, model, price}) {
+//   this.brand = brand;
+//   this.model = model;
+//   this.price = price;
+// }
 
 
 // Задание 5
 
-// Дополни код присвоив объявленным переменным выражения обращения к соответствующим свойствам обьекта apartment используя синтаксис «квадратных скобок».
+// Добавь в свойство prototype функции-конструктора Car два метода:
 
-//     aptRating - рейтинг;
-//     aptDescr - описание;
-//     aptPrice - цена;
-//     aptTags - теги.
+//     getPrice() - возвращает значение свойства price из объекта который его будет вызывать.
+//     changePrice(newPrice) - обновляет значение свойства price у объекта который его будет вызывать на newPrice.
 
-// const apartment = {
-//   imgUrl: "https://via.placeholder.com/640x480",
-//   descr: "Spacious apartment in the city center",
-//   rating: 4,
-//   price: 2153,
-//   tags: ["premium", "promoted", "top"],
+// function Car({ brand, model, price }) {
+//   this.brand = brand;
+//   this.model = model;
+//   this.price = price;
+// }
+// Car.prototype.getPrice = function () {
+// return this.price;
 // };
-
-// // Change code below this line
-// const aptRating = apartment["rating"];
-// const aptDescr = apartment["descr"];
-// const aptPrice = apartment["price"];
-// const aptTags = apartment["tags"];
-// // Change code above this line
+// Car.prototype.changePrice = function (newPrice) {
+// return this.price = newPrice;
+// };
 
 
 // Задание 6
 
-// Дополни код обновив значения свойств объекта apartment:
+// С помощью Function Declaration напиши функцию-конструктор Storage, которая будет создавать объекты для управления складом товаров. Функция ожидает только один аргумент - начальный массив товаров, который записывается на создаваемый объект в свойство items.
 
-//     цену в свойстве price на 5000;
-//     рейтинг квартиры в свойстве rating на 4.7;
-//     имя владельца во вложенном свойстве name на "Henry Sibola";
-//     массив тегов в свойстве tags добавив в конец строку "trusted".
+// Добавь методы на прототип:
 
-// const apartment = {
-//   imgUrl: "https://via.placeholder.com/640x480",
-//   descr: "Spacious apartment in the city center",
-//   rating: 4,
-//   price: 2153,
-//   tags: ["premium", "promoted", "top"],
-//   owner: {
-//     name: "Henry",
-//     phone: "982-126-1588",
-//     email: "henry.carter@aptmail.com",
-//   },
+//     getItems() - возвращает массив текущих товаров в свойстве items объекта, который вызывает этот метод.
+//     addItem(newItem) - принимает новый товар newItem и добавляет его в массив товаров в свойстве items объекта, который вызывает этот метод.
+//     removeItem(item) - принимает товар item и удаляет его из массива товаров в свойстве items объекта, который вызывает этот метод.
+
+// Под комментарием мы добавили инициализацию экземпляра и вызовы методов в той последовательности, в которой твой код будут проверять тесты. Пожалуйста ничего там не меняй.
+
+// function Storage(items) {
+// this.items = items;
+// };
+// Storage.prototype.getItems = function () {
+// return this.items;
+// };
+// Storage.prototype.addItem = function(newItem) {
+// return this.items.push(newItem);
+// };
+// Storage.prototype.removeItem = function(item) {
+// return this.items.splice(1, 1);
 // };
 
-// // Change code below this line
-// apartment.price = 5000;
-// apartment.rating = 4.7;
-// apartment.owner.name = "Henry Sibola";
-// apartment.tags.push("trusted");
+
+// // Пиши код выше этой строки
+// const storage = new Storage(['Нанитоиды', 'Пролонгер', 'Антигравитатор']);
+// console.log(storage.getItems()); // ["Нанитоиды", "Пролонгер", "Антигравитатор"]
+// storage.addItem('Дроид');
+// console.log(storage.getItems()); // ["Нанитоиды", "Пролонгер", "Антигравитатор", "Дроид"]
+// storage.removeItem('Пролонгер');
+// console.log(storage.getItems()); // ["Нанитоиды", "Антигравитатор", "Дроид"]
 
 
 // Задание 7
 
-// Добавь объекту apartment несколько новых свойств:
+// С помощью Function Declaration напиши функцию-конструктор StringBuilder, которая принимает один параметр baseValue - произвольную строку, которая записывается на создаваемый объект в свойство value.
 
-//     area - площадь в квадратных метрах, число 60;
-//     rooms - количество комнат, число 3;
-//     location - местоположение квартиры, обьект со следующими вложенными свойствами;
-//         country - страна, строка "Jamaica";
-//         city - город, строка "Kingston".
+// Добавь методы на прототип:
 
-// const apartment = {
-//   imgUrl: "https://via.placeholder.com/640x480",
-//   descr: "Spacious apartment in the city center",
-//   rating: 4.7,
-//   price: 5000,
-//   tags: ["premium", "promoted", "top", "trusted"],
-//   owner: {
-//     name: "Henry Sibola",
-//     phone: "982-126-1588",
-//     email: "henry.carter@aptmail.com",
-//   },
+//     getValue() - возвращает текущее значение свойства value.
+//     padEnd(str) - получает парметр str (строку) и добавляет её в конец значения свойства value объекта, который вызывает этот метод.
+//     padStart(str) - получает парметр str (строку) и добавляет её в начало значения свойства value объекта, который вызывает этот метод.
+//     padBoth(str) - получает парметр str (строку) и добавляет её в начало и в конец значения свойства value объекта, который вызывает этот метод.
+
+// Под комментарием мы добавили инициализацию экземпляра и вызовы методов в той последовательности, в которой твой код будут проверять тесты. Пожалуйста ничего там не меняй.
+
+// function StringBuilder(baseValue) {
+// this.value = baseValue;
+// };
+// StringBuilder.prototype.getValue = function () {
+// return this.value;
+// };
+// StringBuilder.prototype.padEnd = function (str) {
+//  this.value = this.value + str;
+// };
+// StringBuilder.prototype.padStart = function (str) {
+// this.value = str + this.value;
+// };
+// StringBuilder.prototype.padBoth = function (str) {
+// this.value = str + this.value + str;
 // };
 
-// // Change code below this line
-// apartment.area = 60;
-// apartment.rooms = 3;
-// apartment.location = {country: "Jamaica", city: "Kingston"};
+
+// // Пиши код выше этой строки
+// const builder = new StringBuilder('.');
+// console.log(builder.getValue()); // '.'
+// builder.padStart('^');
+// console.log(builder.getValue()); // '^.'
+// builder.padEnd('^');
+// console.log(builder.getValue()); // '^.^'
+// builder.padBoth('=');
+// console.log(builder.getValue()); // '=^.^='
 
 
 //Задание 8
 
-//Дополни код объявления объекта так, чтобы у него были свойства name, price, image и tags со значениями из переменных с аналогичными именами. Обязательно используй синтаксис коротких свойств.
+//Используя ключевое слово class объяви класс Car с пустым телом.
 
-// const name = 'Repair Droid';
-// const price = 2500;
-// const image = 'https://via.placeholder.com/640x480';
-// const tags = ['on sale', 'trending', 'best buy'];
-
-// const product = {
-//   // Change code below this line
-// 	name,
-// 	price,
-// 	image,
-// 	tags
-
-//   // Change code above this line
-// };
+//class Car {};
 
 
-// Задание 9
+//Задание 9
 
-// Дополни код объявления объекта credentials так, чтобы в результате у него были два свойства: email и password, имена которых хранятся в переменных emailInputName и passwordInputName.
+//Выполни рефакторинг кода, заменив функцию-конструктор Car на класс с методом-конструктором, принимающим объект.
 
-// Значением свойства email должна быть строка "henry.carter@aptmail.com", а значением свойства password - строка "jqueryismyjam".
-
-// const emailInputName = 'email';
-// const passwordInputName = 'password';
-
-// const credentials = {
-//   // Change code below this line
-//   [emailInputName]: "henry.carter@aptmail.com",
-//   [passwordInputName]: "jqueryismyjam"
-  
-//     // Change code above this line
-// };
+// class Car {
+//   constructor({ brand, model, price }) {
+//   this.brand = brand;
+//   this.model = model;
+//   this.price = price;
+// }
+// }
 
 
 //Задание 10
 
-//Перебери объект apartment используя цикл for...in и запиши в массив keys все его ключи, а в массив values все значения его свойств.
+//Добавь классу Car две метода.
 
-// const apartment = {
-//   descr: "Spacious apartment in the city center",
-//   rating: 4,
-//   price: 2153,
+//    getPrice() - возвращает значение свойства price из объекта который его будет вызывать.
+//    changePrice(newPrice) - обновляет значение свойства price у объекта который его будет вызывать на newPrice.
+
+// class Car {
+//   constructor({ brand, model, price }) {
+//     this.brand = brand;
+//     this.model = model;
+//     this.price = price;
+//   }
+//   getPrice() {
+//   return this.price;
+//   };
+//   changePrice(newPrice) {
+//   this.price = newPrice;
+//   };
 // };
-// const keys = [];
-// const values = [];
-// // Change code below this line
-
-// for (const key in apartment) {
-//   keys.push(key);
-//   console.log(apartment[key]);
-//   values.push(apartment[key]);
-//  };
-
-// console.log(keys);
-// console.log(values);
 
 
-// Задание 11
+//Задание 11
 
-// Выполни рефакторинг решения предыдущего задания добавив в цикл for...in проверку на собственное свойство.
-// const keys = [];
-// const values = [];
-// const advert = {
-//   service: "apt",
+//Выполни рефакторинг класса Car так, чтобы свойство brand было приватным и добавь два метода для публичного интерфейса, для чтения и изменения этого свойства.
+
+//    getBrand() - возвращает значение приватного свойства brand.
+//    changeBrand(newBrand) - изменяет значение приватного свойства brand на newBrand.
+
+// class Car {
+//  #brand;
+// //  model;
+// //  price;
+//   constructor({ brand, model, price }) {
+//     this.#brand = brand;
+//     this.model = model;
+//     this.price = price;
+//   }
+//   getBrand () {
+//   return this.#brand;
+// }
+//   changeBrand (newBrand) {
+//   this.#brand = newBrand;
+//   };
+// }
+
+
+////Задание 12
+
+//Выполни рефакторинг заменив функцию-конструктор Storage на класс с методами. Сделай так, чтобы свойство items было приватным.
+
+//Под комментарием мы добавили инициализацию экземпляра и вызовы методов в той последовательности, в которой твой код будут проверять тесты. Пожалуйста ничего там не меняй.
+
+// class Storage {
+//   #items;
+// constructor (items) {
+//   this.#items = items;
+// }
+
+// getItems() {
+//   return this.#items;
 // };
-// const apartment = Object.create(advert);
-// apartment.descr = "Spacious apartment in the city center";
-// apartment.rating = 4;
-// apartment.price = 2153;
 
-// for (const key in apartment) {
-//   // Change code below this line
-
-//   keys.push(key);
-//   values.push(apartment[key]);
-
-//   // Change code above this line
-// }
-
-// const keys = [];
-// const values = [];
-// const advert = {
-//   service: "apt",
+// addItem(newItem) {
+//   this.#items.push(newItem);
 // };
-// const apartment = Object.create(advert);
-// apartment.descr = "Spacious apartment in the city center";
-// apartment.rating = 4;
-// apartment.price = 2153;
 
-// for (const key in apartment) {
-//   // Change code below this line
-// if (apartment.hasOwnProperty(key)){
-//   keys.push(key);
-//   values.push(apartment[key]);
-// }
-//   // Change code above this line
-// }
-
-// function countProps(object) {
-//   let propCount = 0;
-//   // Change code below this line
-//    const keys = [];
-// for (const key in object) {
-//   if (object.hasOwnProperty(key)){
-//    keys.push(key);
-//    console.log(object[key]);}
-//  };
-//  propCount = keys.length;
-//   // Change code above this line
-//   return propCount;
-// }
+// removeItem(item) {
+//   const itemIndex = this.#items.indexOf(item);
+//   this.#items.splice(itemIndex, 1);
+// };
+// };
+// // Пиши код выше этой строки
+// const storage = new Storage(["Нанитоиды", "Пролонгер", "Антигравитатор"]);
+// console.log(storage.getItems()); // ["Нанитоиды", "Пролонгер", "Антигравитатор"]
+// storage.addItem("Дроид");
+// console.log(storage.getItems()); // ["Нанитоиды", "Пролонгер", "Антигравитатор", "Дроид"]
+// storage.removeItem("Пролонгер");
+// console.log(storage.getItems()); // ["Нанитоиды", "Антигравитатор", "Дроид"]
 
 
 // Задание 13
 
-// Перебери объект apartment используя метод Object.keys() и цикл for...of. Запиши в переменную keys массив ключей собственных свойств объекта apartment, и добавь в массив values все значения его свойств.
+// Выполни рефакторинг заменив функцию-конструктор StringBuilder на класс с методами. Сделай так, чтобы свойство value было приватным.
 
-// const apartment = {
-//   descr: "Spacious apartment in the city center",
-//   rating: 4,
-//   price: 2153,
-// };
-// const values = [];
-// // Change code below this line
-// const keys = Object.keys(apartment);
-// for (const key of keys){
-// values.push(apartment[key]);
+// Под комментарием мы добавили инициализацию экземпляра и вызовы методов в той последовательности, в которой твой код будут проверять тесты. Пожалуйста ничего там не меняй.
+
+// class StringBuilder {
+//   #value;
+// constructor (baseValue) {
+//   this.#value = baseValue;
 // }
+
+// getValue() {
+//   return this.#value;
+// };
+
+// padEnd(str) {
+//   this.#value += str;
+// };
+
+// padStart(str) {
+//   this.#value = str + this.#value;
+// };
+
+// padBoth(str) {
+//   this.padStart(str);
+//   this.padEnd(str);
+// };
+// };
+// // Пиши код выше этой строки
+// const builder = new StringBuilder('.');
+// console.log(builder.getValue()); // '.'
+// builder.padStart('^');
+// console.log(builder.getValue()); // '^.'
+// builder.padEnd('^');
+// console.log(builder.getValue()); // '^.^'
+// builder.padBoth('=');
+// console.log(builder.getValue()); // '=^.^='
 
 
 //Задание 14
 
-//Выполни рефакторинг функции countProps(object) используя метод Object.keys() и, возможно, цикл for...of.
+//Выполни рефакторинг класса Car. Сделай свойства model и price приватными, также как #brand. Стандартизируй публичный интерфейс класса заменив уже объявленные методы на геттеры и сеттеры brand, model и price для взаимодействия с приватными свойствами.
 
-// function countProps(object) {
-//   // Change code below this line
-//   let propCount = 0;
-// const keys = Object.keys(object);
-//   for (const key of keys) {
-//     if (object.hasOwnProperty(key)) {
-//       propCount += 1;
-//     }
+// class Car {
+//   #model;
+//   #price;
+//   #brand;
+
+//   constructor({ brand, model, price }) {
+//     this.#brand = brand;
+//     this.#model = model;
+//     this.#price = price;
 //   }
 
-//   return propCount;
-//   // Change code above this line
-// }
-
-// function countProps(object) {
-//   // Change code below this line
-//   let propCount = 0;
-// const keys = Object.keys(object);
-//   for (const key of keys) {
-//           propCount += 1;
-    
+//   get brand() {
+//     return this.#brand;
 //   }
 
-//   return propCount;
-//   // Change code above this line
+//   set brand(newBrand) {
+//     this.#brand = newBrand;
+//   }
+
+//   get model() {
+//     return this.#model;
+//   }
+
+//   set model(newModel) {
+//     this.#model = newModel;
+//   }
+
+//   get price() {
+//     return this.#price;
+//   }
+
+//   set price(newPrice) {
+//     this.#price = newPrice;
+//   }
 // }
 
 
 // Задание 15
 
-// Запиши в переменную keys массив ключей собственных свойств объекта apartment, а в переменную values массив всех значений его свойств. Используй методы Object.keys() и Object.values().
+// Выполни рефакторинг класса Car. Добавь публичное статическое свойство MAX_PRICE со значением 50000 - максимально допустимая цена автомобиля.
 
-// const apartment = {
-//   descr: "Spacious apartment in the city center",
-//   rating: 4,
-//   price: 2153,
+// Добавь сеттеру price проверку передаваемого значения параметра newPrice. Если оно больше чем MAX_PRICE, сеттер ничего не делает, а если меньше или равно, то перезаписывает цену автомобиля.
+
+// class Car {
+//   // Пиши код ниже этой строки
+//   static MAX_PRICE = 50000;
+//   #price;
+
+//   constructor({ price }) {
+//     this.#price = price;
+//   }
+
+//   get price() {
+//     return this.#price;
+//   }
+
+//   set price(newPrice) {
+//     if (newPrice < Car.MAX_PRICE) {
+//     this.#price = newPrice;
+//   };
+//   };
+//   // Пиши код выше этой строки
+// }
+
+// const audi = new Car({price: 35000});
+// console.log(audi.price); // 35000
+
+// audi.price = 49000;
+// console.log(audi.price); // 49000
+
+// audi.price = 51000;
+// console.log(audi.price); // 49000
+
+
+// Задание 16
+
+// Добавь классу Car публичный статический метод checkPrice(price), принимающий цену автомобиля. Метод должен сравнить значения параметра price и приватного статического свойства MAX_PRICE.
+
+//     Если цена автомобиля превышает максимальную, метод должен вернуть строку 'Внимание! Цена превышает допустимую.'.
+//     В противном случае метод должен вернуть строку 'Всё хорошо, цена в порядке.'.
+
+// Под объявлением класса мы добавили инициализацию экземпляра и вызовы методов, чтобы показать как будет использоваться метод checkPrice(price).
+
+// class Car {
+//   static #MAX_PRICE = 50000;
+//   // Пиши код ниже этой строки
+// static checkPrice(price){
+// if (price > Car.#MAX_PRICE) {
+//   return `Внимание! Цена превышает допустимую.`
+// } else {
+//   return `Всё хорошо, цена в порядке.`}
 // };
-// // Change code below this line
-// const keys = Object.keys(apartment);
-// const values = Object.values(apartment);
-
-
-//Задание 16
-
-//Напиши функцию countTotalSalary(salaries) которая принимает объект зарплат, где имя свойства это имя сотрудника, а значение свойства это зарплата. Функция должна рассчитать общую сумму зарплат сотрудников и вернуть её. Используй переменную totalSalary для хранения общей суммы зарплаты.
-
-// function countTotalSalary(salaries){
-//     let totalSalary = 0;
-//   // Change code below this line
-//   for (const key in salaries) {
-//   if (salaries.hasOwnProperty(key)){
-//     totalSalary += salaries[key];
-  
-//   }}
-//     // Change code above this line
-//   return totalSalary;
+//   // Пиши код выше этой строки
+//   constructor({ price }) {
+//     this.price = price;
+//   }
 // }
 
-// console.log(countTotalSalary({ mango: 100, poly: 150, alfred: 80 }));
 
+// Задание 17
 
-//Задание 17
+// В приложении нужен администратор с возможностью добавлять почты пользователей в чёрный список.
 
-//Перебери массив объектов colors используя цикл for...of. Добавь в массив hexColors значения свойств hex, а в массив rgbColors значения свойств rgb из всех объектов массива colors.
+//     Объяви класс Admin, который наследует от класса User.
+//     Добавь классу Admin публичное статическое свойство AccessLevel (уровень доступа), значение которого это объект { BASIC: 'basic', SUPERUSER: 'superuser' }.
 
-// const colors = [
-//   { hex: '#f44336', rgb: '244,67,54' },
-//   { hex: '#2196f3', rgb: '33,150,243' },
-//   { hex: '#4caf50', rgb: '76,175,80' },
-//   { hex: '#ffeb3b', rgb: '255,235,59' },
-// ];
+// class User {
+//   email;
 
-// const hexColors = [];
-// const rgbColors = [];
-// // Change code below this line
-// for (const color of colors) {
-// hexColors.push(color.hex);
-// rgbColors.push(color.rgb);
+//   constructor(email) {
+//     this.email = email;
+//   }
+
+//   get email() {
+//     return this.email;
+//   }
+
+//   set email(newEmail) {
+//     this.email = newEmail;
+//   }
 // }
+// // Пиши код ниже этой строки
+// class Admin extends User {
+// static AccessLevel = { 
+//   BASIC: 'basic', 
+//   SUPERUSER: 'superuser' 
+// };
+// };
 
 
 //Задание 18
 
-//Напиши функцию getProductPrice(productName) которая принимает один параметр productName - название продукта. Функция ищет объект продукта с таким именем (свойство name) в массиве products и возвращает его цену (свойство price). Если продукт с таким названием не найден, функция должна возвращать null.
+//Добавь классу Admin метод constructor, который принимает один параметр - объект настроек с двумя свойствами email и accessLevel. Добавь классу Admin публичное свойство accessLevel, значение которого будет передаваться при вызове конструктора.
 
-// const products = [
-//   { name: 'Radar', price: 1300, quantity: 4 },
-//   { name: 'Scanner', price: 2700, quantity: 3 },
-//   { name: 'Droid', price: 400, quantity: 7 },
-//   { name: 'Grip', price: 1200, quantity: 9 },
-// ];
+//Чтобы показать как будет использоваться класс Admin, мы добавили инициализацию экземпляра под объявлением класса.
 
-// function getProductPrice(productName) {
-//   // Change code below this line
-//   let productPrice = null;
-//  for (let product of products) {
-//       if (product.name === productName)
-//   { productPrice = product.price}
-   
-//  } 
-//   return productPrice; 
-//   // Change code above this line
+// class User {
+//   email;
+
+//   constructor(email) {
+//     this.email = email;
+//   }
+
+//   get email() {
+//     return this.email;
+//   }
+
+//   set email(newEmail) {
+//     this.email = newEmail;
+//   }
 // }
 
-// console.log(getProductPrice("Radar"));
-
-
-//Задание 19
-
-//Напиши функцию getAllPropValues(propName) которая принимает один параметр propName - имя (ключ) свойства. Функция должна вернуть массив всех значений свойства с таким именем из каждого объекта в массиве products. Если в объектах нет свойства с таким именем, функция должна вернуть пустой массив.
-
-// const products = [
-//   { name: 'Radar', price: 1300, quantity: 4 },
-//   { name: 'Scanner', price: 2700, quantity: 3 },
-//   { name: 'Droid', price: 400, quantity: 7 },
-//   { name: 'Grip', price: 1200, quantity: 9 },
-// ];
-
-// function getAllPropValues(propName) {
-//   // Change code below this line
-//   const values = [];
-//   for (const product of products) {
-//     if (product[propName]){
-//   values.push(product[propName])
-//   }
-//   }
-//   return values;
-//   // Change code above this line
-// }
-// console.log(getAllPropValues("name"));
-
-
-//Задание 20
-
-//Напиши функцию getAllPropValues(propName) которая принимает один параметр propName - имя (ключ) свойства. Функция должна вернуть массив всех значений свойства с таким именем из каждого объекта в массиве products. Если в объектах нет свойства с таким именем, функция должна вернуть пустой массив.
-
-// const products = [
-//   { name: 'Radar', price: 1300, quantity: 4 },
-//   { name: 'Scanner', price: 2700, quantity: 3 },
-//   { name: 'Droid', price: 400, quantity: 7 },
-//   { name: 'Grip', price: 1200, quantity: 9 },
-// ];
-
-// function calculateTotalPrice(productName) {
+// class Admin extends User {
 //   // Пиши код ниже этой строки
-//   let totalPrice = 0;
-//   for (let product of products)
-//     if (product.name === productName) {
-//     totalPrice = product.price * product.quantity
-//     }
-//   return totalPrice;
+
+//   static AccessLevel = {
+//     BASIC: 'basic',
+//     SUPERUSER: 'superuser'
+//   };
+//   accessLevel;
+// constructor({email, accessLevel}) {
+// super(email);
+//   this.accessLevel = accessLevel;}
 //   // Пиши код выше этой строки
 // }
-// console.log(calculateTotalPrice("Radar"));
+
+// const mango = new Admin({
+//   email: 'mango@mail.com',
+//   accessLevel: Admin.AccessLevel.SUPERUSER
+// });
+
+// console.log(mango.email); // mango@mail.com
+// console.log(mango.accessLevel); // superuser
 
 
-//Задание 21
+// Задание 19
 
-//Пришел трёхдневный прогноз максимальных температур и мы считаем среднюю температуру за три дня (meanTemperature). Замени объявления переменных yesterday, today и tomorrow одной операцией деструктуризации свойств объекта highTemperatures.
+// Добавь классу Admin следующие свойства и методы.
 
-// const highTemperatures = {
-//   yesterday: 28,
-//   today: 26,
-//   tomorrow: 33,
+//     Публичное свойство blacklistedEmails для хранения чёрного списка почтовых адресов пользователей. Значение по умолчанию это пустой массив.
+//     Публичный метод blacklist(email) для добавления почты в чёрный список. Метод должен добавлять значение параметра email в массив хранящийся в свойстве blacklistedEmails.
+//     Публичный метод isBlacklisted(email) для проверки почты в чёрном списке. Метод должен проверять наличие значения параметра email в массиве хранящемся в свойстве blacklistedEmails и возвращать true или false.
+
+// После объявления класса мы добавили инициализацию экземпляра и вызовы методов в той последовательности, в которой твой код будут проверять тесты. Пожалуйста ничего там не меняй.
+
+// class User {
+//   email;
+
+//   constructor(email) {
+//     this.email = email;
+//   }
+
+//   get email() {
+//     return this.email;
+//   }
+
+//   set email(newEmail) {
+//     this.email = newEmail;
+//   }
+// }
+// class Admin extends User {
+//   // Пиши код ниже этой строки
+
+//   static AccessLevel = {
+//     BASIC: 'basic',
+//     SUPERUSER: 'superuser'
+//   };
+
+//   accessLevel;
+//  blacklistedEmails = [];
+//   constructor({ email, accessLevel }) {
+//     super(email);
+//     this.accessLevel = accessLevel;
+//   }
+
+// blacklist(email) {
+// return this.blacklistedEmails.push(email);
 // };
-// // Change code below this line
-// const { yesterday, today, tomorrow } = highTemperatures;
-
-// // Change code above this line
-// const meanTemperature = (yesterday + today + tomorrow) / 3;
-
-
-//Задание 22
-
-//В прогнозе максимальных температур также может быть необязательное свойство icon - иконка погоды. Замени объявления переменных yesterday, today, tomorrow и icon одной операцией деструктуризации свойств объекта highTemperatures. Задай значение по умолчанию для icon - строку "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg".
-
-// const highTemperatures = {
-//   yesterday: 28,
-//   today: 26,
-//   tomorrow: 33,
+// isBlacklisted(email) {
+// return this.blacklistedEmails.includes(email);
 // };
-// // Change code below this line
-// const {yesterday, today, tomorrow, icon = "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg"} = highTemperatures;
 
-// // Change code above this line
-// const meanTemperature = (yesterday + today + tomorrow) / 3;
-
-
-//Задание 23
-
-//Замени объявления переменных highYesterday, highToday, highTomorrow и highIcon одной операцией деструктуризации свойств объекта highTemperatures. Задай значение по умолчанию для highIcon - строку "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg".
-
-// const highTemperatures = {
-//   yesterday: 28,
-//   today: 26,
-//   tomorrow: 33,
-// };
-// // Change code below this line
-// const {yesterday: highYesterday, today: highToday, tomorrow: highTomorrow, icon: highIcon = "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg"} = highTemperatures;
-
-// // Change code above this line
-// const meanTemperature = (highYesterday + highToday + highTomorrow) / 3;
-
-
-//Задание 24
-
-//Выполни рефакторинг цикла for...of так, чтобы в нём использовалась деструктуризация объекта..
-
-// const colors = [
-//   { hex: '#f44336', rgb: '244,67,54' },
-//   { hex: '#2196f3', rgb: '33,150,243' },
-//   { hex: '#4caf50', rgb: '76,175,80' },
-//   { hex: '#ffeb3b', rgb: '255,235,59' },
-// ];
-
-// const hexColors = [];
-// const rgbColors = [];
-// // Change code below this line
-
-// for (const {hex, rgb} of colors) {
-//   hexColors.push(hex);
-//   rgbColors.push(rgb);
+//   // Пиши код выше этой строки
 // }
 
+// const mango = new Admin({
+//   email: 'mango@mail.com',
+//   accessLevel: Admin.AccessLevel.SUPERUSER
+// });
 
-//Задание 25
+// console.log(mango.email); // mango@mail.com
+// console.log(mango.accessLevel); // superuser
+// mango.blacklist('poly@mail.com');
+// console.log(mango.blacklistedEmails); // 'poly@mail.com'
+// console.log(mango.isBlacklisted('mango@mail.com')); //  false
+// console.log(mango.isBlacklisted('poly@mail.com')); // true 
 
-//Мы получили прогноз погоды на два дня, с минимальными и максимальными температурами, а также необязательными иконками. Замени объявления всех переменных одной операцией деструктуризации свойств объекта forecast. Задай значение по умолчанию для иконок, переменных todayIcon и tomorrowIcon - строку "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg".
 
-// const forecast = {
-//   today: {
-//     low: 28,
-//     high: 32,
-//     icon: 'https://www.flaticon.com/svg/static/icons/svg/861/861059.svg',
-//   },
-//   tomorrow: {
-//     low: 27,
-//     high: 31,
-//   },
-// };
-// // Change code below this line
-// const {today: {low: lowToday, high: highToday, icon: todayIcon = "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg"},
-//        tomorrow: {low: lowTomorrow, high: highTomorrow, icon: tomorrowIcon = "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg"}
-//       } = forecast;
 
 
-// Задание 26
 
-// Функция calculateMeanTemperature(forecast) принимает один параметр forecast - объект температур на два дня следующего формата.
-
-// {
-//   today: { low: 10, high: 20 },
-//   tomorrow: { low: 20, high: 30 }
-// }
-
-// Замени объявления переменных todayLow, todayHigh, tomorrowLow и tomorrowHigh одной операцией деструктуризации свойств объекта forecast.
-
-// // Change code below this line
-// function calculateMeanTemperature({today: {low: todayLow, high: todayHigh}, tomorrow: {low: tomorrowLow, high: tomorrowHigh}}) {
-  
-//   // Change code above this line
-//   return (todayLow + todayHigh + tomorrowLow + tomorrowHigh) / 4;
-// }
-
-// // Change code below this line
-// function calculateMeanTemperature(forecast) {
-//   const {today: {low: todayLow, high: todayHigh}, tomorrow: {low: tomorrowLow, high: tomorrowHigh}} = forecast;
-  
-
-//   // Change code above this line
-//   return (todayLow + todayHigh + tomorrowLow + tomorrowHigh) / 4;
-// }
-
-
-//Задание 27
-
-//В переменной scores хранится массив результатов тестирования. Используя распыление и методы Math.max() и Math.min() дополни код так, чтобы в переменной bestScore был самый высокий балл, а в worstScore самый низкий.
-
-// const scores = [89, 64, 42, 17, 93, 51, 26];
-// // Change code below this line
-// const bestScore = Math.max(...scores);
-// const worstScore = Math.min(...scores);
-
-
-// Задание 28
-
-// В переменных firstGroupScores, secondGroupScores и thirdGroupScores хранятся результаты тестирования отдельных групп. Используя распыление дополни код так, чтобы:
-
-//     В переменной allScores хранился массив всех результатов от первой до третьей группы.
-//     В переменной bestScore был самый высокий общий балл.
-//     В переменной worstScore был самый низкий общий балл.
-
-// const firstGroupScores = [64, 42, 93];
-// const secondGroupScores = [89, 14, 51, 26];
-// const thirdGroupScores = [29, 47, 18, 97, 81];
-// // Change code below this line
-// const allScores = [...firstGroupScores, ...secondGroupScores, ...thirdGroupScores];
-// const bestScore = Math.max(...allScores);
-// const worstScore = Math.min(...allScores);
-
-
-//Задание 29
-
-//В конструкторе можно создавать новые тесты, для которых есть настройки по умолчанию которые хранятся в переменной defaultSettings. Во время создания теста, все или часть настроек можно переопределить, они хранятся в переменной overrideSettings.
-
-//Для того чтобы получить финальные настройки теста, необходимо взять настройки по умолчанию и поверх них применить переопределённые настройки. Дополни код так, чтобы в переменной finalSettings получился объект финальных настроек теста.
-
-// const defaultSettings = {
-//   theme: 'light',
-//   public: true,
-//   withPassword: false,
-//   minNumberOfQuestions: 10,
-//   timePerQuestion: 60,
-// };
-// const overrideSettings = {
-//   public: false,
-//   withPassword: true,
-//   timePerQuestion: 30,
-// };
-// // Change code below this line
-// const finalSettings = {...defaultSettings, ...overrideSettings};
-
-
-// Задание 30
-
-// Напиши функцию makeTask(data) которая принимает один параметр data - объект со следующими свойствами.
-
-//     text - текст задачи.
-//     category - категория задачи.
-//     priority - приоритет задачи.
-
-// Функция должна составить и вернуть новый объект задачи, не изменяя напрямую параметр data. В новом объекте должно быть свойство completed, значение которого хранится в одноимённой локальной переменной.
-
-// В параметре data гарантированно будет только свойство text, а остальные два, category и priority, могут отсутствовать. Тогда, в новом объекте задачи, в свойствах category и priority должны быть значения по умолчанию, хранящиеся в одноимённых локальных переменных.
-
-// function makeTask(data) {
-//   const completed = false;
-//   const category = 'General';
-//   const priority = 'Normal';
-//   // Change code below this line
-// let text = '';
-//   return { category, priority, completed, ...data };
-//   // Change code above this line
-// }
-// console.log(makeTask({}));
-
-
-//Задание 31
-
-//Используя операцию rest дополни код функции add() так, чтобы она принимала любое количество аргументов, считала и возвращала их сумму.
-
-// // Change code below this line
-// function add(...args) {
-//  let sum = 0;
-//   for (let arg of args)
-//   {sum += arg};
-//   return sum;
-//   // Change code above this line
-// }
-// console.log(add(15, 27));
-
-
-//Задание 32
-
-//Функция addOverNum() считает сумму всех аргументов. Измени параметры и тело функции addOverNum() так, чтобы она считала сумму только тех аргументов, которые больше чем заданное число. Это число должно быть первым параметром функции.
-
-// // Change code below this line
-// function addOverNum(...args) {
-//   let total = 0;
-
-//   for (const arg of args) {
-//     if (arg > args[0]) {
-//     total += arg;
-//   }}
-
-//   return total;
-//   // Change code above this line
-// }
-// console.log(addOverNum(10, 12, 4, 11, 48, 10, 8));
-
-
-// Задание 33
-
-// Функция findMatches() принимает произвольное количество аргументов. Первым аргументом всегда будет массив чисел, а остальные аргументы будут просто числами.
-
-// Дополни код функции так, чтобы она возвращала новый массив matches, в котором будут только те аргументы, начиная со второго, которые есть в массиве первого аргумента.
-
-// Например, findMatches([1, 2, 3, 4, 5], 1, 8, 2, 7) должна вернуть массив [1, 2], потому что только они есть в массиве первого аргумента.
-
-// // Change code below this line
-// const nums = [];
-// function findMatches(nums, ...args) {
-//   const matches = []; // Don't change this line
-// for (let arg of args) {
-//   for (let num of nums) {
-//   if (num === arg)
-//     matches.push(arg)
-//   }}
-//   // Change code above this line
-//   return matches;
-// }
-// console.log(findMatches([4, 89, 17, 36, 2], 8, 17, 89, 27, 2));
-
-
-// Задание 34
-
-// Добавь объекту bookShelf ещё два метода, которые пока что будут возвращать просто строки по аналогии с getBooks() и addBook(bookName).
-
-// Метод removeBook(bookName) будет удалять книгу по имени. Возвращает строку "Deleting book <имя книги>", где <имя книги> это значение параметра bookName.
-
-// Метод updateBook(oldName, newName) будет обновлять название книги на новое. Возвращает строку "Updating book <старое имя> to <новое имя>", где <старое имя> и <новое имя>это значения параметров oldName и newName соотвественно.
-
-// 
-// const bookShelf = {
-//   // Change code below this line
-//   books: ['The last kingdom', 'The guardian of dreams'],
-//   getBooks() {
-//     return 'Returning all books';
-//   },
-//   addBook(bookName) {
-//     return `Adding book ${bookName}`;
-//   },
-//   removeBook(bookName) {
-//     return `Deleting book ${bookName}`;
-//   },
-//   updateBook(oldName, newName) {
-//     return `Updating book ${oldName} to ${newName}`;
-//   },
-//   // Change code above this line
-// };
-
-
-//Задание 35
-
-//Дополни метод updateBook(oldName, newName) так, чтобы он изменял название книги с oldName на newName в свойстве books. Используй indexOf() для того, чтобы найти нужный элемент массива, и splice() для того чтобы заменить этот элемент
-
-// const bookShelf = {
-//   books: ['The last kingdom', 'Haze', 'The guardian of dreams'],
-//   updateBook(oldName, newName) {
-//     // Change code below this line
-// 	const bookIndex = this.books.indexOf(oldName);
-//     this.books.splice(bookIndex, 1, newName);
-	
-	
-//     // Change code above this line
-//   },
-// };
-
-
-//Задание 36
-
-//К нам обратилась владелица лавки зелий «У старой жабы» и заказала программу для ведения инвентаря - добавления, удаления, поиска и обновления зелий. Добавь объекту atTheOldToad свойство potions, значением которого сделай пустой массив.
-
-// const atTheOldToad = {
-//   // Change code below this line
-//   potions: []
-  
-//   // Change code above this line
-// };
-
-
-//Задание 37
-
-//Добавь объекту atTheOldToad метод getPotions(), который просто возвращает значение свойства potions.
-
-// const atTheOldToad = {
-//   // Change code below this line
-//   potions: ['Speed potion', 'Dragon breath', 'Stone skin'],
-//   getPotions() {
-//   return this.potions;}
-//     // Change code above this line
-// };
-
-
-//Задание 38
-
-//Дополни метод addPotion(potionName) так, чтобы он добавлял зелье potionName в конец массива зелий в свойстве potions.
-
-// const atTheOldToad = {
-//   potions: ['Speed potion', 'Dragon breath', 'Stone skin'],
-//   addPotion(potionName) {
-//     // Change code below this line
-//     this.potions.push(potionName);
-//     // Change code above this line
-//   },
-// };
-
-// const atTheOldToad = {
-//   potions: ["Speed potion", "Dragon breath", "Stone skin"],
-//   removePotion(potionName) {
-//     // Change code below this line
-//     let indexPotion = this.potions.indexOf(potionName);
-//   this.potions.splice(indexPotion, 1); 
-//     return this.potions;
-//     // Change code above this line
-//   },
-// };
-
-
-//Задание 40
-
-//Дополни метод updatePotionName(oldName, newName) так, чтобы он обновлял название зелья с oldName на newName, в массиве зелий в свойстве potions.
-
-// const atTheOldToad = {
-//   potions: ['Speed potion', 'Dragon breath', 'Stone skin'],
-//   updatePotionName(oldName, newName) {
-//     // Change code below this line
-//    const potionIndex = this.potions.indexOf(oldName);
-//      this.potions.splice(potionIndex, 1, newName); 
-//     // Change code above this line
-//   },
-// };
-
-
-// Задание 41
-
-// Заказчица хочет чтобы каждое зелье было представлено не только именем, но и ценой, а в будущем может быть и другими характеристиками. Поэтому теперь в свойстве potions будет храниться массив объектов со следующими свойствами.
-
-// {
-//   name: "Dragon breath",
-//   price: 700
-// }
-
-// Выполни рефакторинг методов объекта atTheOldToad так, чтобы они работали не с массивом строк, а с массивом объектов.
-
-//     getPotions() - метод для получения всех зелий. Возвращает значение свойства potions.
-//     addPotion(newPotion) - добавляет зелье newPotion (уже объект) в массив в свойстве potions.
-//     removePotion(potionName) - удаляет объект зелья с именем potionName из массива в свойстве potions.
-//     updatePotionName(oldName, newName) - обновляет свойство name объекта-зелья с названием oldName на newName в массиве potions.
-
-// const atTheOldToad = {
-//   potions: [
-//     { name: 'Speed potion', price: 460 },
-//     { name: 'Dragon breath', price: 780 },
-//     { name: 'Stone skin', price: 520 },
-//   ],
-//   // Change code below this line
-//   getPotions() {
-//     return this.potions;
-//   },
-//   addPotion(potionName) {
-//     if (this.potions.includes(potionName)) {
-//       return `Potion ${potionName} is already equipped!`;
-//     }
-
-//     this.potions.push(potionName);
-//   },
-//   removePotion(potionName) {
-//     for(let i=0; i < this.potions.length; i += 1) {
-//     	if(this.potions[i].name === potionName) {
-//         	this.potions.splice(i, 1)
-//         }
-//     }
-//   },
- 
-//   updatePotionName(oldName, newName) {
-//      for(let i=0; i < this.potions.length; i += 1) {
-//     	if(this.potions[i].name === oldName) {
-//           this.potions[i].name = newName
-//         //this.potions.splice(i, 1, {name: newName, price: 0})
-//         }
-//     }
-   
-//   },
-//   // Change code above this line
-// };
-// console.log(atTheOldToad.updatePotionName("Stone skin", "Invulnerability potion"));

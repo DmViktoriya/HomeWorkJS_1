@@ -1,866 +1,954 @@
-//Задание 1
+// Задание 1
 
-//Присвой переменной apartment объект описывающий квартиру со следующими характеристиками:
+// Функция calculateTotalPrice(orderedItems) принимает один параметр orderedItems - массив чисел, и рассчитывает общую сумму его элементов, которая сохраняется в переменной totalPrice и возвращается как результат работы функции.
 
-//    imgUrl - фотография, значение "https://via.placeholder.com/640x480";
-//    descr - описание, значение "Spacious apartment in the city center";
-//    rating - рейтинг, значение 4;
-//    price - цена, значение 2153;
-//    tags - метаинформация, массив ["premium", "promoted", "top"].
+// Выполни рефакторинг функции так, чтобы вместо цикла for она использовала метод forEach.
 
-//const apartment = {
-//imgUrl: "https://via.placeholder.com/640x480",
-//descr: "Spacious apartment in the city center",
-//rating: 4,
-//price: 2153,
-//tags: ["premium", "promoted", "top"]
-//};
+// function calculateTotalPrice(orderedItems) {
+//   let totalPrice = 0;
+//    // Пиши код ниже этой строки
+
+//   //for (let i = 0; i < orderedItems.length; i += 1) {
+//   //  totalPrice += orderedItems[i];
+//   //}
+// orderedItems.forEach(function(orderedItem,index) {
+// totalPrice += orderedItems[index]
+// })
+//   // Пиши код выше этой строки
+//   return totalPrice;
+// }
 
 
-//Задание 2
+// Задание 2
 
-//Дополни объект квартиры свойством owner, значением которого будет объект с информацией о владельце. Добавь ему следующие свойства:
+// Функция filterArray(numbers, value) принимает массив чисел numbers и возвращает новый массив, в котором будут только те элементы оригинального массива, которые больше чем значение параметра value.
 
-//    name - имя владельца, значение "Henry";
-//    phone - телефон, значение "982-126-1588";
-//    email - почта, значение "henry.carter@aptmail.com".
+// Выполни рефакторинг функции так, чтобы вместо цикла for она использовала метод forEach.
 
-//const apartment = {
-//    imgUrl: 'https://via.placeholder.com/640x480',
-//    descr: 'Spacious apartment in the city center',
-//    rating: 4,
-//    price: 2153,
-//    tags: ['premium', 'promoted', 'top'],
-//  	owner: {
-//     	name: "Henry",
-//    	phone: "982-126-1588",
-//    	email: "henry.carter@aptmail.com"
-//    },
-//  };
+// function filterArray(numbers, value) {
+//     const filteredNumbers = [];
+//     // Пиши код ниже этой строки
+
+//     for (let i = 0; i < numbers.length; i += 1) {
+//       if (numbers[i] > value) {
+//         filteredNumbers.push(numbers[i]);
+//       }
+//     }
+//   numbers.forEach(function(filteredNumbers) {})
+//     // Пиши код выше этой строки
+//     return filteredNumbers;
+//   }
 
 
 //Задание 3
 
-//Дополни код присвоив объявленным переменным выражения обращения к соответствующим свойствам обьекта apartment.
+//Функция getCommonElements(firstArray, secondArray) принимает два массива произвольной длины в параметры firstArray и secondArray, и возвращает новый массив их общих элементов, то есть тех которые есть в обоих массивах.
 
-    // aptRating - рейтинг;
-    // aptDescr - описание;
-    // aptPrice - цена;
-    // aptTags - теги.
+//Выполни рефакторинг функции так, чтобы вместо цикла for она использовала метод forEach.
 
-// const apartment = {
-//   imgUrl: "https://via.placeholder.com/640x480",
-//   descr: "Spacious apartment in the city center",
-//   rating: 4,
-//   price: 2153,
-//   tags: ["premium", "promoted", "top"],
-// };
+// function getCommonElements(firstArray, secondArray) {
+//     const commonElements = [];
+//     // Пиши код ниже этой строки
 
-// // Change code below this line
-// const aptRating = apartment.rating;
-// const aptDescr = apartment.descr;
-// const aptPrice = apartment.price;
-// const aptTags = apartment.tags;
-// // Change code above this line
+//     for (let i = 0; i < firstArray.length; i += 1) {
+//       if (secondArray.includes(firstArray[i])) {
+//         commonElements.push(firstArray[i]);
+//       }
+//     }
+//   firstArray.forEach(function(commonElements) {})
+//     return commonElements;
+//     // Пиши код выше этой строки
+//   }
 
 
-// Задание 4
+//Задание 4
 
-// Дополни код присвоив объявленным переменным выражения обращения к соответствующим свойствам обьекта apartment.
+//Выполни рефакторинг функции calculateTotalPrice() так, чтобы она была объявлена как стрелочная.
 
-//     ownerName - имя владельца;
-//     ownerPhone - телефон владельца;
-//     ownerEmail - почта владельца;
-//     numberOfTags - количество элементов массива в свойстве tags;
-//     firstTag - первый элемент массива в свойстве tags;
-//     lastTag - последний элемент массива в свойстве tags.
+// Пиши код ниже этой строки
 
-
-// Задание 5
-
-// Дополни код присвоив объявленным переменным выражения обращения к соответствующим свойствам обьекта apartment используя синтаксис «квадратных скобок».
-
-//     aptRating - рейтинг;
-//     aptDescr - описание;
-//     aptPrice - цена;
-//     aptTags - теги.
-
-// const apartment = {
-//   imgUrl: "https://via.placeholder.com/640x480",
-//   descr: "Spacious apartment in the city center",
-//   rating: 4,
-//   price: 2153,
-//   tags: ["premium", "promoted", "top"],
-// };
-
-// // Change code below this line
-// const aptRating = apartment["rating"];
-// const aptDescr = apartment["descr"];
-// const aptPrice = apartment["price"];
-// const aptTags = apartment["tags"];
-// // Change code above this line
+//const calculateTotalPrice = (quantity, pricePerItem)=> {
+//  // Пиши код выше этой строки
+//  return quantity * pricePerItem;
+//}
 
 
-// Задание 6
+//Задание 5
 
-// Дополни код обновив значения свойств объекта apartment:
+//Выполни рефакторинг функции calculateTotalPrice() так, чтобы она использовала неявный возврат.
 
-//     цену в свойстве price на 5000;
-//     рейтинг квартиры в свойстве rating на 4.7;
-//     имя владельца во вложенном свойстве name на "Henry Sibola";
-//     массив тегов в свойстве tags добавив в конец строку "trusted".
+// // Пиши код ниже этой строки
+// const calculateTotalPrice = (quantity, pricePerItem) => 
+//   quantity * pricePerItem;
 
-// const apartment = {
-//   imgUrl: "https://via.placeholder.com/640x480",
-//   descr: "Spacious apartment in the city center",
-//   rating: 4,
-//   price: 2153,
-//   tags: ["premium", "promoted", "top"],
-//   owner: {
-//     name: "Henry",
-//     phone: "982-126-1588",
-//     email: "henry.carter@aptmail.com",
-//   },
-// };
-
-// // Change code below this line
-// apartment.price = 5000;
-// apartment.rating = 4.7;
-// apartment.owner.name = "Henry Sibola";
-// apartment.tags.push("trusted");
+// // Пиши код выше этой строки
 
 
-// Задание 7
+//Задание 6
 
-// Добавь объекту apartment несколько новых свойств:
+//Выполни рефакторинг функции calculateTotalPrice(orderedItems) заменив её объявление на стрелочную функцию. Замени коллбек-функцию передаваемую в метод forEach() на стрелочную функцию.
 
-//     area - площадь в квадратных метрах, число 60;
-//     rooms - количество комнат, число 3;
-//     location - местоположение квартиры, обьект со следующими вложенными свойствами;
-//         country - страна, строка "Jamaica";
-//         city - город, строка "Kingston".
+// // Пиши код ниже этой строки
+// const calculateTotalPrice = (orderedItems) => {
+//   let totalPrice = 0;
 
-// const apartment = {
-//   imgUrl: "https://via.placeholder.com/640x480",
-//   descr: "Spacious apartment in the city center",
-//   rating: 4.7,
-//   price: 5000,
-//   tags: ["premium", "promoted", "top", "trusted"],
-//   owner: {
-//     name: "Henry Sibola",
-//     phone: "982-126-1588",
-//     email: "henry.carter@aptmail.com",
-//   },
-// };
+//   orderedItems.forEach((item) => {
+//     totalPrice += item;
+//   });
 
-// // Change code below this line
-// apartment.area = 60;
-// apartment.rooms = 3;
-// apartment.location = {country: "Jamaica", city: "Kingston"};
+//   return totalPrice;
+// }
+// // Пиши код выше этой строки
+
+
+//Задание 7
+
+//Замени объявление функции filterArray() и коллбек для метода forEach() на стрелочные функции.
+
+// // Пиши код ниже этой строки
+// const filterArray = (numbers, value) => {
+//     const filteredNumbers = [];
+
+//     numbers.forEach((number) => {
+//       if (number > value) {
+//         filteredNumbers.push(number);
+//       }
+//     });
+
+//     // Пиши код выше этой строки
+//     return filteredNumbers;
+//   }
 
 
 //Задание 8
 
-//Дополни код объявления объекта так, чтобы у него были свойства name, price, image и tags со значениями из переменных с аналогичными именами. Обязательно используй синтаксис коротких свойств.
+//Замени объявление функции getCommonElements() и коллбек для метода forEach() на стрелочные функции.
 
-// const name = 'Repair Droid';
-// const price = 2500;
-// const image = 'https://via.placeholder.com/640x480';
-// const tags = ['on sale', 'trending', 'best buy'];
+// // Пиши код ниже этой строки
+// const getCommonElements = (firstArray, secondArray) => {
+//     const commonElements = [];
 
-// const product = {
-//   // Change code below this line
-// 	name,
-// 	price,
-// 	image,
-// 	tags
+//     firstArray.forEach((element) => {
+//       if (secondArray.includes(element)) {
+//         commonElements.push(element);
+//       }
+//     });
 
-//   // Change code above this line
-// };
+//     // Пиши код выше этой строки
+//     return commonElements;
+//   }
 
 
 // Задание 9
 
-// Дополни код объявления объекта credentials так, чтобы в результате у него были два свойства: email и password, имена которых хранятся в переменных emailInputName и passwordInputName.
+// Функция changeEven(numbers, value) принимает массив чисел numbers и обновляет каждый элемент, значение которого это чётное число, добавляя к нему значение параметра value.
 
-// Значением свойства email должна быть строка "henry.carter@aptmail.com", а значением свойства password - строка "jqueryismyjam".
+// Выполни рефакторинг функции так, чтобы она стала чистой - не изменяла массив чисел numbers, а создавала, наполняла и возвращала новый массив с обновлёнными значениями.
 
-// const emailInputName = 'email';
-// const passwordInputName = 'password';
-
-// const credentials = {
-//   // Change code below this line
-//   [emailInputName]: "henry.carter@aptmail.com",
-//   [passwordInputName]: "jqueryismyjam"
-  
-//     // Change code above this line
-// };
+// function changeEven(numbers, value) {
+//     // Пиши код ниже этой строки
+//   const newNumbers = [];
+//     numbers.forEach(number => {
+//       if (number % 2 === 0) {
+//         newNumbers.push(number += value);
+//       } else {newNumbers.push(number)}
+//     });
+//   return newNumbers;
+// }
+//     // Пиши код выше этой строки
 
 
 //Задание 10
 
-//Перебери объект apartment используя цикл for...in и запиши в массив keys все его ключи, а в массив values все значения его свойств.
+//Дополни код так, чтобы в переменной planetsLengths получился массив длин названий планет. Обязательно используй метод map().
 
-// const apartment = {
-//   descr: "Spacious apartment in the city center",
-//   rating: 4,
-//   price: 2153,
-// };
-// const keys = [];
-// const values = [];
-// // Change code below this line
-
-// for (const key in apartment) {
-//   keys.push(key);
-//   console.log(apartment[key]);
-//   values.push(apartment[key]);
-//  };
-
-// console.log(keys);
-// console.log(values);
+// const planets = ['Земля', 'Марс', 'Венера', 'Юпитер'];
+// // Пиши код ниже этой строки
+// const planetsLengths = planets.map((planet) => planet.length);
+// console.log(planetsLengths);
 
 
-// Задание 11
+//Задание 11
 
-// Выполни рефакторинг решения предыдущего задания добавив в цикл for...in проверку на собственное свойство.
-// const keys = [];
-// const values = [];
-// const advert = {
-//   service: "apt",
-// };
-// const apartment = Object.create(advert);
-// apartment.descr = "Spacious apartment in the city center";
-// apartment.rating = 4;
-// apartment.price = 2153;
+//Используя метод map() сделай так, чтобы в переменной titles получился массив названий книг (свойство title) из всех объектов массива books.
 
-// for (const key in apartment) {
-//   // Change code below this line
+// const books = [
+//     { title: 'Последнее королевство', author: 'Бернард Корнуэлл', rating: 8.38 },
+//     { title: 'На берегу спокойных вод', author: 'Роберт Шекли', rating: 8.51 },
+//     { title: 'Сон смешного человека', author: 'Федор Достоевский', rating: 7.75 },
+//     { title: 'Красна как кровь', author: 'Ли Танит', rating: 7.94 },
+//     { title: 'Враг Божий', author: 'Бернард Корнуэлл', rating: 8.67 }
+//   ];
+//   // Пиши код ниже этой строки
 
-//   keys.push(key);
-//   values.push(apartment[key]);
+//   const titles = books.map(book => book.title);
+// console.log(titles);
 
-//   // Change code above this line
-// }
 
-// const keys = [];
-// const values = [];
-// const advert = {
-//   service: "apt",
-// };
-// const apartment = Object.create(advert);
-// apartment.descr = "Spacious apartment in the city center";
-// apartment.rating = 4;
-// apartment.price = 2153;
+//Задание 12
 
-// for (const key in apartment) {
-//   // Change code below this line
-// if (apartment.hasOwnProperty(key)){
-//   keys.push(key);
-//   values.push(apartment[key]);
-// }
-//   // Change code above this line
-// }
+//Используя метод flatMap() сделай так, чтобы в переменной genres получился массив всех жанров книг (свойство genres) из массива книг books.
 
-// function countProps(object) {
-//   let propCount = 0;
-//   // Change code below this line
-//    const keys = [];
-// for (const key in object) {
-//   if (object.hasOwnProperty(key)){
-//    keys.push(key);
-//    console.log(object[key]);}
-//  };
-//  propCount = keys.length;
-//   // Change code above this line
-//   return propCount;
-// }
+// const books = [
+//     {
+//       title: 'Последнее королевство',
+//       author: 'Бернард Корнуэлл',
+//       genres: ['приключения', 'историческое']
+//     },
+//     {
+//       title: 'На берегу спокойных вод',
+//       author: 'Роберт Шекли',
+//       genres: ['фантастика']
+//     },
+//     {
+//       title: 'Красна как кровь',
+//       author: 'Ли Танит',
+//       genres: ['ужасы', 'мистика']
+//     }
+//   ];
+//   // Пиши код ниже этой строки
 
+//   const genres = books.flatMap((book) => book.genres);
+
+
+// Задача. Имена пользователей
+
+// Этот массив объектов мы будем передавать в параметр users при вызове функции из задания.
+
+// [
+//   {
+//     name: 'Moore Hensley',
+//     email: 'moorehensley@indexia.com',
+//     eyeColor: 'blue',
+//     friends: ['Sharron Pace'],
+//     isActive: false,
+//     balance: 2811,
+//     skills: ['ipsum', 'lorem'],
+//     gender: 'male',
+//     age: 37,
+//   },
+//   {
+//     name: 'Sharlene Bush',
+//     email: 'sharlenebush@tubesys.com',
+//     eyeColor: 'blue',
+//     friends: ['Briana Decker', 'Sharron Pace'],
+//     isActive: true,
+//     balance: 3821,
+//     skills: ['tempor', 'mollit', 'commodo', 'veniam', 'laborum'],
+//     gender: 'female',
+//     age: 34,
+//   },
+//   {
+//     name: 'Ross Vazquez',
+//     email: 'rossvazquez@xinware.com',
+//     eyeColor: 'green',
+//     friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+//     isActive: false,
+//     balance: 3793,
+//     skills: ['nulla', 'anim', 'proident', 'ipsum', 'elit'],
+//     gender: 'male',
+//     age: 24,
+//   },
+//   {
+//     name: 'Elma Head',
+//     email: 'elmahead@omatom.com',
+//     eyeColor: 'green',
+//     friends: ['Goldie Gentry', 'Aisha Tran'],
+//     isActive: true,
+//     balance: 2278,
+//     skills: ['adipisicing', 'irure', 'velit'],
+//     gender: 'female',
+//     age: 21,
+//   },
+//   {
+//     name: 'Carey Barr',
+//     email: 'careybarr@nurali.com',
+//     eyeColor: 'blue',
+//     friends: ['Jordan Sampson', 'Eddie Strong'],
+//     isActive: true,
+//     balance: 3951,
+//     skills: ['ex', 'culpa', 'nostrud'],
+//     gender: 'male',
+//     age: 27,
+//   },
+//   {
+//     name: 'Blackburn Dotson',
+//     email: 'blackburndotson@furnigeer.com',
+//     eyeColor: 'brown',
+//     friends: ['Jacklyn Lucas', 'Linda Chapman'],
+//     isActive: false,
+//     balance: 1498,
+//     skills: ['non', 'amet', 'ipsum'],
+//     gender: 'male',
+//     age: 38,
+//   },
+//   {
+//     name: 'Sheree Anthony',
+//     email: 'shereeanthony@kog.com',
+//     eyeColor: 'brown',
+//     friends: ['Goldie Gentry', 'Briana Decker'],
+//     isActive: true,
+//     balance: 2764,
+//     skills: ['lorem', 'veniam', 'culpa'],
+//     gender: 'female',
+//     age: 39,
+//   },
+// ];
 
 // Задание 13
 
-// Перебери объект apartment используя метод Object.keys() и цикл for...of. Запиши в переменную keys массив ключей собственных свойств объекта apartment, и добавь в массив values все значения его свойств.
+// Дополни функцию getUserNames(users) так, чтобы она возвращала массив имён пользователей (свойство name) из массива объектов в параметре users.
 
-// const apartment = {
-//   descr: "Spacious apartment in the city center",
-//   rating: 4,
-//   price: 2153,
-// };
-// const values = [];
-// // Change code below this line
-// const keys = Object.keys(apartment);
-// for (const key of keys){
-// values.push(apartment[key]);
-// }
+// // Пиши код ниже этой строки
+// const getUserNames = users => {
+//    return users.map((user) => user.name); 
+
+//   };
+//   // Пиши код выше этой строки
 
 
-//Задание 14
+// Задача. Почты пользователей
 
-//Выполни рефакторинг функции countProps(object) используя метод Object.keys() и, возможно, цикл for...of.
+// Этот массив объектов мы будем передавать в параметр users при вызове функции из задания.
 
-// function countProps(object) {
-//   // Change code below this line
-//   let propCount = 0;
-// const keys = Object.keys(object);
-//   for (const key of keys) {
-//     if (object.hasOwnProperty(key)) {
-//       propCount += 1;
-//     }
-//   }
+// [
+//   {
+//     name: 'Moore Hensley',
+//     email: 'moorehensley@indexia.com',
+//     eyeColor: 'blue',
+//     friends: ['Sharron Pace'],
+//     isActive: false,
+//     balance: 2811,
+//     skills: ['ipsum', 'lorem'],
+//     gender: 'male',
+//     age: 37,
+//   },
+//   {
+//     name: 'Sharlene Bush',
+//     email: 'sharlenebush@tubesys.com',
+//     eyeColor: 'blue',
+//     friends: ['Briana Decker', 'Sharron Pace'],
+//     isActive: true,
+//     balance: 3821,
+//     skills: ['tempor', 'mollit', 'commodo', 'veniam', 'laborum'],
+//     gender: 'female',
+//     age: 34,
+//   },
+//   {
+//     name: 'Ross Vazquez',
+//     email: 'rossvazquez@xinware.com',
+//     eyeColor: 'green',
+//     friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+//     isActive: false,
+//     balance: 3793,
+//     skills: ['nulla', 'anim', 'proident', 'ipsum', 'elit'],
+//     gender: 'male',
+//     age: 24,
+//   },
+//   {
+//     name: 'Elma Head',
+//     email: 'elmahead@omatom.com',
+//     eyeColor: 'green',
+//     friends: ['Goldie Gentry', 'Aisha Tran'],
+//     isActive: true,
+//     balance: 2278,
+//     skills: ['adipisicing', 'irure', 'velit'],
+//     gender: 'female',
+//     age: 21,
+//   },
+//   {
+//     name: 'Carey Barr',
+//     email: 'careybarr@nurali.com',
+//     eyeColor: 'blue',
+//     friends: ['Jordan Sampson', 'Eddie Strong'],
+//     isActive: true,
+//     balance: 3951,
+//     skills: ['ex', 'culpa', 'nostrud'],
+//     gender: 'male',
+//     age: 27,
+//   },
+//   {
+//     name: 'Blackburn Dotson',
+//     email: 'blackburndotson@furnigeer.com',
+//     eyeColor: 'brown',
+//     friends: ['Jacklyn Lucas', 'Linda Chapman'],
+//     isActive: false,
+//     balance: 1498,
+//     skills: ['non', 'amet', 'ipsum'],
+//     gender: 'male',
+//     age: 38,
+//   },
+//   {
+//     name: 'Sheree Anthony',
+//     email: 'shereeanthony@kog.com',
+//     eyeColor: 'brown',
+//     friends: ['Goldie Gentry', 'Briana Decker'],
+//     isActive: true,
+//     balance: 2764,
+//     skills: ['lorem', 'veniam', 'culpa'],
+//     gender: 'female',
+//     age: 39,
+//   },
+// ];
 
-//   return propCount;
-//   // Change code above this line
-// }
+// Задание 14
 
-// function countProps(object) {
-//   // Change code below this line
-//   let propCount = 0;
-// const keys = Object.keys(object);
-//   for (const key of keys) {
-//           propCount += 1;
-    
-//   }
+// Дополни функцию getUserEmails(users) так, чтобы она возвращала массив почтовых адресов пользователей (свойство email) из массива объектов в параметре users.
 
-//   return propCount;
-//   // Change code above this line
-// }
+// // Пиши код ниже этой строки
+// const getUserEmails = users => {
+//   return users.map((user) => user.email);  
+
+//   };
+//   // Пиши код выше этой строки
 
 
-// Задание 15
+//Задание 15
 
-// Запиши в переменную keys массив ключей собственных свойств объекта apartment, а в переменную values массив всех значений его свойств. Используй методы Object.keys() и Object.values().
+//Дополни код так, чтобы в переменной evenNumbers получился массив чётных чисел из массива numbers, а в переменной oddNumbers массив нечётных. Обязательно используй метод filter().
 
-// const apartment = {
-//   descr: "Spacious apartment in the city center",
-//   rating: 4,
-//   price: 2153,
-// };
-// // Change code below this line
-// const keys = Object.keys(apartment);
-// const values = Object.values(apartment);
+// const numbers = [17, 24, 82, 61, 36, 18, 47, 52, 73];
+// // Пиши код ниже этой строки
+
+// const evenNumbers = numbers.filter(number => number % 2 === 0);
+// const oddNumbers = numbers.filter(number => number % 2 !== 0);
 
 
 //Задание 16
 
-//Напиши функцию countTotalSalary(salaries) которая принимает объект зарплат, где имя свойства это имя сотрудника, а значение свойства это зарплата. Функция должна рассчитать общую сумму зарплат сотрудников и вернуть её. Используй переменную totalSalary для хранения общей суммы зарплаты.
+//Дополни код так, чтобы в переменной allGenres был массив всех жанров книг (свойство genres) из массива books, а в переменной uniqueGenres массив уникальных жанров - без повторений.
 
-// function countTotalSalary(salaries){
-//     let totalSalary = 0;
-//   // Change code below this line
-//   for (const key in salaries) {
-//   if (salaries.hasOwnProperty(key)){
-//     totalSalary += salaries[key];
-  
-//   }}
-//     // Change code above this line
-//   return totalSalary;
-// }
+// const books = [
+//     {
+//       title: 'Последнее королевство',
+//       author: 'Бернард Корнуэлл',
+//       genres: ['приключения', 'историческое']
+//     },
+//     {
+//       title: 'На берегу спокойных вод',
+//       author: 'Роберт Шекли',
+//       genres: ['фантастика', 'мистика']
+//     },
+//     {
+//       title: 'Красна как кровь',
+//       author: 'Ли Танит',
+//       genres: ['ужасы', 'мистика', 'приключения']
+//     }
+//   ];
+//   // Пиши код ниже этой строки
+//   const allGenres = books.flatMap(book => book.genres);
+//   const uniqueGenres = allGenres.filter(
+//   (genres, index, books) => books.indexOf(genres) === index
+//   );
 
-// console.log(countTotalSalary({ mango: 100, poly: 150, alfred: 80 }));
 
+// Задание 17
 
-//Задание 17
+// Используя метод filter() дополни код так, чтобы:
 
-//Перебери массив объектов colors используя цикл for...of. Добавь в массив hexColors значения свойств hex, а в массив rgbColors значения свойств rgb из всех объектов массива colors.
+//     В переменной topRatedBooks получился массив книг рейтинг которых (свойство rating) больше либо равно значению переменной MIN_RATING.
+//     В переменной booksByAuthor получился массив книг написанных автором с именем (свойство author) которое совпадает со значением в переменной AUTHOR.
 
-// const colors = [
-//   { hex: '#f44336', rgb: '244,67,54' },
-//   { hex: '#2196f3', rgb: '33,150,243' },
-//   { hex: '#4caf50', rgb: '76,175,80' },
-//   { hex: '#ffeb3b', rgb: '255,235,59' },
+// const books = [
+//   { title: 'Последнее королевство', author: 'Бернард Корнуэлл', rating: 8.38 },
+//   { title: 'На берегу спокойных вод', author: 'Роберт Шекли', rating: 8.51 },
+//   { title: 'Сон смешного человека', author: 'Федор Достоевский', rating: 7.75 },
+//   { title: 'Красна как кровь', author: 'Ли Танит', rating: 7.94 },
+//   { title: 'Враг Божий', author: 'Бернард Корнуэлл', rating: 8.67 }
 // ];
 
-// const hexColors = [];
-// const rgbColors = [];
-// // Change code below this line
-// for (const color of colors) {
-// hexColors.push(color.hex);
-// rgbColors.push(color.rgb);
-// }
+// const MIN_RATING = 8;
+// const AUTHOR = 'Бернард Корнуэлл';
+// // Пиши код ниже этой строки
+
+// const topRatedBooks = books.filter(book => 
+//   book.rating >= MIN_RATING);
+// const booksByAuthor = books.filter(book =>
+//   book.author === AUTHOR);
 
 
 //Задание 18
 
-//Напиши функцию getProductPrice(productName) которая принимает один параметр productName - название продукта. Функция ищет объект продукта с таким именем (свойство name) в массиве products и возвращает его цену (свойство price). Если продукт с таким названием не найден, функция должна возвращать null.
+//Дополни функцию getUsersWithEyeColor(users, color) так, чтобы она возвращала массив пользователей у которых цвет глаз (свойство eyeColor) совпадает со значением параметра color.
 
-// const products = [
-//   { name: 'Radar', price: 1300, quantity: 4 },
-//   { name: 'Scanner', price: 2700, quantity: 3 },
-//   { name: 'Droid', price: 400, quantity: 7 },
-//   { name: 'Grip', price: 1200, quantity: 9 },
-// ];
+// // Пиши код ниже этой строки
+// const getUsersWithEyeColor = (users, color) => {
+//  return eyeColorUsers = users.filter(user =>
+//        user.eyeColor === color)
 
-// function getProductPrice(productName) {
-//   // Change code below this line
-//   let productPrice = null;
-//  for (let product of products) {
-//       if (product.name === productName)
-//   { productPrice = product.price}
-   
-//  } 
-//   return productPrice; 
-//   // Change code above this line
-// }
-
-// console.log(getProductPrice("Radar"));
+// };
+// // Пиши код выше этой строки
 
 
 //Задание 19
 
-//Напиши функцию getAllPropValues(propName) которая принимает один параметр propName - имя (ключ) свойства. Функция должна вернуть массив всех значений свойства с таким именем из каждого объекта в массиве products. Если в объектах нет свойства с таким именем, функция должна вернуть пустой массив.
+//Дополни функцию getUsersWithAge(users, minAge, maxAge) так, чтобы она возвращала массив пользователей, возраст которых (свойство age) попадает в промежуток от minAge до maxAge.
 
-// const products = [
-//   { name: 'Radar', price: 1300, quantity: 4 },
-//   { name: 'Scanner', price: 2700, quantity: 3 },
-//   { name: 'Droid', price: 400, quantity: 7 },
-//   { name: 'Grip', price: 1200, quantity: 9 },
-// ];
+// // Пиши код ниже этой строки
+// const getUsersWithAge = (users, minAge, maxAge) => {
+//  return ageUser = users.filter(({age}) => 
+//        age >= minAge && age < maxAge);
 
-// function getAllPropValues(propName) {
-//   // Change code below this line
-//   const values = [];
-//   for (const product of products) {
-//     if (product[propName]){
-//   values.push(product[propName])
-//   }
-//   }
-//   return values;
-//   // Change code above this line
-// }
-// console.log(getAllPropValues("name"));
+// };
+// // Пиши код выше этой строки
 
 
 //Задание 20
 
-//Напиши функцию getAllPropValues(propName) которая принимает один параметр propName - имя (ключ) свойства. Функция должна вернуть массив всех значений свойства с таким именем из каждого объекта в массиве products. Если в объектах нет свойства с таким именем, функция должна вернуть пустой массив.
+//Дополни функцию getUsersWithFriend(users, friendName) так, чтобы она возвращала массив пользователей у которых есть друг с именем в параметре friendName. Массив друзей пользователя хранится в свойстве friends.
 
-// const products = [
-//   { name: 'Radar', price: 1300, quantity: 4 },
-//   { name: 'Scanner', price: 2700, quantity: 3 },
-//   { name: 'Droid', price: 400, quantity: 7 },
-//   { name: 'Grip', price: 1200, quantity: 9 },
-// ];
-
-// function calculateTotalPrice(productName) {
-//   // Пиши код ниже этой строки
-//   let totalPrice = 0;
-//   for (let product of products)
-//     if (product.name === productName) {
-//     totalPrice = product.price * product.quantity
-//     }
-//   return totalPrice;
-//   // Пиши код выше этой строки
-// }
-// console.log(calculateTotalPrice("Radar"));
+// // Пиши код ниже этой строки
+// const getUsersWithFriend = (users, friendName) => {
+//  return friendUser = users.filter(
+//    (user) => user.friends.includes(friendName));
+// };
+// // Пиши код выше этой строки
 
 
 //Задание 21
 
-//Пришел трёхдневный прогноз максимальных температур и мы считаем среднюю температуру за три дня (meanTemperature). Замени объявления переменных yesterday, today и tomorrow одной операцией деструктуризации свойств объекта highTemperatures.
+//Дополни функцию getFriends(users) так, чтобы она возвращала массив друзей всех пользователей (свойство friends). У нескольких пользователей могут быть одинаковые друзья, сделай так чтобы возвращаемый массив не содержал повторений.
 
-// const highTemperatures = {
-//   yesterday: 28,
-//   today: 26,
-//   tomorrow: 33,
+// // Пиши код ниже этой строки
+// const getFriends = (users) => {
+//  const allFriends = users.flatMap(user => user.friends);
+//   const uniqueFriends = allFriends.filter((friend, index, array) => array.indexOf(friend) === index);
+//   return uniqueFriends;
 // };
-// // Change code below this line
-// const { yesterday, today, tomorrow } = highTemperatures;
 
-// // Change code above this line
-// const meanTemperature = (yesterday + today + tomorrow) / 3;
+// // Пиши код выше этой строки
 
 
 //Задание 22
 
-//В прогнозе максимальных температур также может быть необязательное свойство icon - иконка погоды. Замени объявления переменных yesterday, today, tomorrow и icon одной операцией деструктуризации свойств объекта highTemperatures. Задай значение по умолчанию для icon - строку "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg".
+//Дополни функцию getActiveUsers(users) так, чтобы она возвращала массив активных пользователей, значение свойства isActive которых true.
 
-// const highTemperatures = {
-//   yesterday: 28,
-//   today: 26,
-//   tomorrow: 33,
+// // Пиши код ниже этой строки
+// const getActiveUsers = (users) => {
+// return activeUsers = users.filter(user => user.isActive === true);   
 // };
-// // Change code below this line
-// const {yesterday, today, tomorrow, icon = "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg"} = highTemperatures;
-
-// // Change code above this line
-// const meanTemperature = (yesterday + today + tomorrow) / 3;
+// // Пиши код выше этой строки
 
 
 //Задание 23
 
-//Замени объявления переменных highYesterday, highToday, highTomorrow и highIcon одной операцией деструктуризации свойств объекта highTemperatures. Задай значение по умолчанию для highIcon - строку "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg".
+//Дополни функцию getInactiveUsers(users) так, чтобы она возвращала массив неактивных пользователей, значение свойства isActive которых false.
 
-// const highTemperatures = {
-//   yesterday: 28,
-//   today: 26,
-//   tomorrow: 33,
+// // Пиши код ниже этой строки
+// const getInactiveUsers = (users) => {
+//  return InactiveUsers = users.filter(user => user.isActive === false);  
 // };
-// // Change code below this line
-// const {yesterday: highYesterday, today: highToday, tomorrow: highTomorrow, icon: highIcon = "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg"} = highTemperatures;
-
-// // Change code above this line
-// const meanTemperature = (highYesterday + highToday + highTomorrow) / 3;
+// // Пиши код выше этой строки
 
 
-//Задание 24
+// Задание 24
 
-//Выполни рефакторинг цикла for...of так, чтобы в нём использовалась деструктуризация объекта..
+// Используя метод find() дополни код так, чтобы:
 
-// const colors = [
-//   { hex: '#f44336', rgb: '244,67,54' },
-//   { hex: '#2196f3', rgb: '33,150,243' },
-//   { hex: '#4caf50', rgb: '76,175,80' },
-//   { hex: '#ffeb3b', rgb: '255,235,59' },
+//     В переменной bookWithTitle получился объект книги название которой (свойство title) совпадает со значением переменной BOOK_TITLE.
+//     В переменной bookByAuthor получился объект книги автор который (свойство author) совпадает со значением переменной AUTHOR.
+
+// const books = [
+//   { title: 'Последнее королевство', author: 'Бернард Корнуэлл', rating: 8.38 },
+//   { title: 'На берегу спокойных вод', author: 'Роберт Шекли', rating: 8.51 },
+//   { title: 'Сон смешного человека', author: 'Федор Достоевский', rating: 7.75 },
+//   { title: 'Красна как кровь', author: 'Ли Танит', rating: 7.94 },
 // ];
+// const BOOK_TITLE = 'Сон смешного человека';
+// const AUTHOR = 'Роберт Шекли';
+// // Пиши код ниже этой строки
 
-// const hexColors = [];
-// const rgbColors = [];
-// // Change code below this line
-
-// for (const {hex, rgb} of colors) {
-//   hexColors.push(hex);
-//   rgbColors.push(rgb);
-// }
+// const bookWithTitle = books.find(book => book.title === BOOK_TITLE);
+// const bookByAuthor = books.find(book => book.author === AUTHOR);
 
 
 //Задание 25
 
-//Мы получили прогноз погоды на два дня, с минимальными и максимальными температурами, а также необязательными иконками. Замени объявления всех переменных одной операцией деструктуризации свойств объекта forecast. Задай значение по умолчанию для иконок, переменных todayIcon и tomorrowIcon - строку "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg".
+//Дополни функцию getUserWithEmail(users, email) так, чтобы она возвращала объект пользователя, почта которого (свойство email) совпадает со значением параметра email.
 
-// const forecast = {
-//   today: {
-//     low: 28,
-//     high: 32,
-//     icon: 'https://www.flaticon.com/svg/static/icons/svg/861/861059.svg',
-//   },
-//   tomorrow: {
-//     low: 27,
-//     high: 31,
-//   },
+// // Пиши код ниже этой строки
+// const getUserWithEmail = (users, email) => {
+//  return emailUser = users.find(user => user.email === email);  
 // };
-// // Change code below this line
-// const {today: {low: lowToday, high: highToday, icon: todayIcon = "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg"},
-//        tomorrow: {low: lowTomorrow, high: highTomorrow, icon: tomorrowIcon = "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg"}
-//       } = forecast;
+// // Пиши код выше этой строки
 
 
 // Задание 26
 
-// Функция calculateMeanTemperature(forecast) принимает один параметр forecast - объект температур на два дня следующего формата.
+// Используя метод every() дополни код так, чтобы:
 
-// {
-//   today: { low: 10, high: 20 },
-//   tomorrow: { low: 20, high: 30 }
-// }
+//     В переменной eachElementInFirstIsEven был результат проверки всех элементов массива firstArray на чётность.
+//     В переменной eachElementInFirstIsOdd был результат проверки всех элементов массива firstArray на нечётность.
+//     В переменной eachElementInSecondIsEven был результат проверки всех элементов массива secondArray на чётность.
+//     В переменной eachElementInSecondIsOdd был результат проверки всех элементов массива secondArray на нечётность.
+//     В переменной eachElementInThirdIsEven был результат проверки всех элементов массива thirdArray на чётность.
+//     В переменной eachElementInThirdIsOdd был результат проверки всех элементов массива thirdArray на нечётность.
 
-// Замени объявления переменных todayLow, todayHigh, tomorrowLow и tomorrowHigh одной операцией деструктуризации свойств объекта forecast.
+// const firstArray = [26, 94, 36, 18];
+// const secondArray = [17, 61, 23];
+// const thirdArray = [17, 26, 94, 61, 36, 23, 18];
+// // Пиши код ниже этой строки
 
-// // Change code below this line
-// function calculateMeanTemperature({today: {low: todayLow, high: todayHigh}, tomorrow: {low: tomorrowLow, high: tomorrowHigh}}) {
-  
-//   // Change code above this line
-//   return (todayLow + todayHigh + tomorrowLow + tomorrowHigh) / 4;
-// }
+// const eachElementInFirstIsEven = firstArray.every((value) => value % 2 === 0);
+// const eachElementInFirstIsOdd = firstArray.every((value) => value % 2 !== 0);
 
-// // Change code below this line
-// function calculateMeanTemperature(forecast) {
-//   const {today: {low: todayLow, high: todayHigh}, tomorrow: {low: tomorrowLow, high: tomorrowHigh}} = forecast;
-  
+// const eachElementInSecondIsEven = secondArray.every((value) => value % 2 === 0);
+// const eachElementInSecondIsOdd = secondArray.every((value) => value % 2 !== 0);
 
-//   // Change code above this line
-//   return (todayLow + todayHigh + tomorrowLow + tomorrowHigh) / 4;
-// }
+// const eachElementInThirdIsEven = thirdArray.every((value) => value % 2 === 0);
+// const eachElementInThirdIsOdd = thirdArray.every((value) => value % 2 !== 0);
 
 
 //Задание 27
 
-//В переменной scores хранится массив результатов тестирования. Используя распыление и методы Math.max() и Math.min() дополни код так, чтобы в переменной bestScore был самый высокий балл, а в worstScore самый низкий.
+//Дополни функцию isEveryUserActive(users) так, чтобы она проверяла все ли пользователи сейчас активны (свойство isActive) и возвращала true или false.
 
-// const scores = [89, 64, 42, 17, 93, 51, 26];
-// // Change code below this line
-// const bestScore = Math.max(...scores);
-// const worstScore = Math.min(...scores);
+// // Пиши код ниже этой строки
+// const isEveryUserActive = (users) => {
+//  return ActiveUsers = users.every(user => user.isActive === true);  
+// };
+// // Пиши код выше этой строки
 
 
 // Задание 28
 
-// В переменных firstGroupScores, secondGroupScores и thirdGroupScores хранятся результаты тестирования отдельных групп. Используя распыление дополни код так, чтобы:
+// Используя метод some() дополни код так, чтобы:
 
-//     В переменной allScores хранился массив всех результатов от первой до третьей группы.
-//     В переменной bestScore был самый высокий общий балл.
-//     В переменной worstScore был самый низкий общий балл.
+//     В переменной anyElementInFirstIsEven был результат проверки наличия чётных элементов в массиве firstArray.
+//     В переменной anyElementInFirstIsOdd был результат проверки наличия нечётных элементов в массиве firstArray.
+//     В переменной anyElementInSecondIsEven был результат проверки наличия чётных элементов в массиве secondArray.
+//     В переменной anyElementInSecondIsOdd был результат проверки наличия нечётных элементов в массиве secondArray.
+//     В переменной anyElementInThirdIsEven был результат проверки наличия чётных элементов в массиве thirdArray.
+//     В переменной anyElementInThirdIsOdd был результат проверки наличия нечётных элементов в массиве thirdArray.
 
-// const firstGroupScores = [64, 42, 93];
-// const secondGroupScores = [89, 14, 51, 26];
-// const thirdGroupScores = [29, 47, 18, 97, 81];
-// // Change code below this line
-// const allScores = [...firstGroupScores, ...secondGroupScores, ...thirdGroupScores];
-// const bestScore = Math.max(...allScores);
-// const worstScore = Math.min(...allScores);
+// const firstArray = [26, 94, 36, 18];
+// const secondArray = [17, 61, 23];
+// const thirdArray = [17, 26, 94, 61, 36, 23, 18];
+// // Пиши код ниже этой строки
+
+// const anyElementInFirstIsEven = firstArray.some(value => value % 2 === 0);
+// const anyElementInFirstIsOdd = firstArray.some(value => value % 2 !== 0);
+
+// const anyElementInSecondIsEven = secondArray.some(value => value % 2 === 0);
+// const anyElementInSecondIsOdd = secondArray.some(value => value % 2 !== 0);
+
+// const anyElementInThirdIsEven = thirdArray.some(value => value % 2 === 0);
+// const anyElementInThirdIsOdd = thirdArray.some(value => value % 2 !== 0);
 
 
 //Задание 29
 
-//В конструкторе можно создавать новые тесты, для которых есть настройки по умолчанию которые хранятся в переменной defaultSettings. Во время создания теста, все или часть настроек можно переопределить, они хранятся в переменной overrideSettings.
+//Дополни функцию isAnyUserActive(users) так, чтобы она проверяла наличие активных пользователей (свойство isActive) и возвращала true или false.
 
-//Для того чтобы получить финальные настройки теста, необходимо взять настройки по умолчанию и поверх них применить переопределённые настройки. Дополни код так, чтобы в переменной finalSettings получился объект финальных настроек теста.
-
-// const defaultSettings = {
-//   theme: 'light',
-//   public: true,
-//   withPassword: false,
-//   minNumberOfQuestions: 10,
-//   timePerQuestion: 60,
+// // Пиши код ниже этой строки
+// const isAnyUserActive = users => {
+//  return activeUsers = users.some(user => user.isActive === true);   
 // };
-// const overrideSettings = {
-//   public: false,
-//   withPassword: true,
-//   timePerQuestion: 30,
+// // Пиши код выше этой строки
+
+
+
+
+// # Вначале метод reduce() создаёт внутреннюю переменную-аккумулятор и
+// # присваивает ей значение параметра initialValue или первого элемента
+// # перебираемого массива, если initialValue не задан.
+// previousValue = 0
+
+// # Далее коллбек-функция вызывается для каждого элемента массива. Текущее значение
+// # параметра previousValue это то, что вернула коллбек-функция на прошлой итерации.
+// Итерация 1 -> previousValue = 0 -> number = 2 -> return 0 + 2 -> return 2
+// Итерация 2 -> previousValue = 2 -> number = 7 -> return 2 + 7 -> return 9
+// Итерация 3 -> previousValue = 9 -> number = 3 -> return 9 + 3 -> return 12
+// Итерация 4 -> previousValue = 12 -> number = 14 -> return 12 + 14 -> return 26
+// Итерация 5 -> previousValue = 26 -> number = 6 -> return 26 + 6 -> return 32
+
+// # После того как весь массив перебран, метод reduce() возвращает значение аккумулятора.
+// Результат - 32
+
+
+
+
+//Задание 30
+
+//Игровому сервису необходим функционал подсчёта среднего времени проведённого в играх. Дополни код так, чтобы в переменной totalPlayTime получилось общее игровое время из массива playtimes.
+
+// const players = {
+//   mango: 1270,
+//   poly: 468,
+//   ajax: 710,
+//   kiwi: 244
 // };
-// // Change code below this line
-// const finalSettings = {...defaultSettings, ...overrideSettings};
+// const playtimes = Object.values(players); // [1270, 468, 710, 244]
+// // Пиши код ниже этой строки
 
+// const totalPlayTime = playtimes.reduce((previousTime, time) => {return previousTime + time;},0);
 
-// Задание 30
-
-// Напиши функцию makeTask(data) которая принимает один параметр data - объект со следующими свойствами.
-
-//     text - текст задачи.
-//     category - категория задачи.
-//     priority - приоритет задачи.
-
-// Функция должна составить и вернуть новый объект задачи, не изменяя напрямую параметр data. В новом объекте должно быть свойство completed, значение которого хранится в одноимённой локальной переменной.
-
-// В параметре data гарантированно будет только свойство text, а остальные два, category и priority, могут отсутствовать. Тогда, в новом объекте задачи, в свойствах category и priority должны быть значения по умолчанию, хранящиеся в одноимённых локальных переменных.
-
-// function makeTask(data) {
-//   const completed = false;
-//   const category = 'General';
-//   const priority = 'Normal';
-//   // Change code below this line
-// let text = '';
-//   return { category, priority, completed, ...data };
-//   // Change code above this line
-// }
-// console.log(makeTask({}));
+// // Пиши код выше этой строки
+// const averagePlayTime = totalPlayTime / playtimes.length;
 
 
 //Задание 31
 
-//Используя операцию rest дополни код функции add() так, чтобы она принимала любое количество аргументов, считала и возвращала их сумму.
+//Нашему сервису необходимо рассчитать среднее время проведённое в одной игре для каждого игрока, и получить общую сумму этих времён. Рассчитать время для каждого из игроков, можно разделив его время (свойство playtime) на количество игр (свойство gamesPlayed).
 
-// // Change code below this line
-// function add(...args) {
-//  let sum = 0;
-//   for (let arg of args)
-//   {sum += arg};
-//   return sum;
-//   // Change code above this line
-// }
-// console.log(add(15, 27));
+// const players = [
+//   { name: 'Манго', playtime: 1270, gamesPlayed: 4 },
+//   { name: 'Поли', playtime: 469, gamesPlayed: 2 },
+//   { name: 'Аякс', playtime: 690, gamesPlayed: 3 },
+//   { name: 'Киви', playtime: 241, gamesPlayed: 1 },
+// ];
+// // Пиши код ниже этой строки
+
+// const totalAveragePlaytimePerGame = players.reduce((total, player) => {
+//   return total + player.playtime / player.gamesPlayed},0);
+
+// console.log(totalAveragePlaytimePerGame);
 
 
 //Задание 32
 
-//Функция addOverNum() считает сумму всех аргументов. Измени параметры и тело функции addOverNum() так, чтобы она считала сумму только тех аргументов, которые больше чем заданное число. Это число должно быть первым параметром функции.
+//Дополни функцию calculateTotalBalance(users) так, чтобы она считала и возвращала сумму всех средств (свойство balance) которые хранят пользователи из массива users.
 
-// // Change code below this line
-// function addOverNum(...args) {
-//   let total = 0;
+// // Пиши код ниже этой строки
+//  const calculateTotalBalance = users => 
+//  users.reduce((acc, user ) => (acc + user.balance ), 0);
 
-//   for (const arg of args) {
-//     if (arg > args[0]) {
-//     total += arg;
-//   }}
-
-//   return total;
-//   // Change code above this line
-// }
-// console.log(addOverNum(10, 12, 4, 11, 48, 10, 8));
+// // Пиши код выше этой строки
 
 
-// Задание 33
+//Задание 33
 
-// Функция findMatches() принимает произвольное количество аргументов. Первым аргументом всегда будет массив чисел, а остальные аргументы будут просто числами.
+//Дополни функцию getTotalFriendCount(users) так, чтобы она считала и возвращала общее количество друзей (свойство friends) всех пользователей из массива users.
 
-// Дополни код функции так, чтобы она возвращала новый массив matches, в котором будут только те аргументы, начиная со второго, которые есть в массиве первого аргумента.
+// // Пиши код ниже этой строки
+// const getTotalFriendCount = users => 
+//  users.reduce((allfriends, user) => 
+// {
+//   allfriends.push(...user.friends);
+//   return allfriends;
+// }, []).length;
 
-// Например, findMatches([1, 2, 3, 4, 5], 1, 8, 2, 7) должна вернуть массив [1, 2], потому что только они есть в массиве первого аргумента.
-
-// // Change code below this line
-// const nums = [];
-// function findMatches(nums, ...args) {
-//   const matches = []; // Don't change this line
-// for (let arg of args) {
-//   for (let num of nums) {
-//   if (num === arg)
-//     matches.push(arg)
-//   }}
-//   // Change code above this line
-//   return matches;
-// }
-// console.log(findMatches([4, 89, 17, 36, 2], 8, 17, 89, 27, 2));
+// // Пиши код выше этой строки
 
 
-// Задание 34
+//Задание 34
 
-// Добавь объекту bookShelf ещё два метода, которые пока что будут возвращать просто строки по аналогии с getBooks() и addBook(bookName).
+//Дополни код так, чтобы в переменной ascendingReleaseDates получилась отсортированная по возрастанию копия массива releaseDates, а в переменной alphabeticalAuthors копия массива имён авторов authors отсортированная в по алфавиту.
 
-// Метод removeBook(bookName) будет удалять книгу по имени. Возвращает строку "Deleting book <имя книги>", где <имя книги> это значение параметра bookName.
+// const releaseDates = [2016, 1967, 2008, 1984, 1973, 2012, 1997];
+// const authors = [
+//   'Ли Танит',
+//   'Бернард Корнуэлл',
+//   'Роберт Шекли',
+//   'Федор Достоевский'
+// ];
+// // Пиши код ниже этой строки
 
-// Метод updateBook(oldName, newName) будет обновлять название книги на новое. Возвращает строку "Updating book <старое имя> to <новое имя>", где <старое имя> и <новое имя>это значения параметров oldName и newName соотвественно.
+// const ascendingReleaseDates = [...releaseDates].sort();
 
-// 
-// const bookShelf = {
-//   // Change code below this line
-//   books: ['The last kingdom', 'The guardian of dreams'],
-//   getBooks() {
-//     return 'Returning all books';
-//   },
-//   addBook(bookName) {
-//     return `Adding book ${bookName}`;
-//   },
-//   removeBook(bookName) {
-//     return `Deleting book ${bookName}`;
-//   },
-//   updateBook(oldName, newName) {
-//     return `Updating book ${oldName} to ${newName}`;
-//   },
-//   // Change code above this line
-// };
+// const alphabeticalAuthors = [...authors].sort();
 
 
 //Задание 35
 
-//Дополни метод updateBook(oldName, newName) так, чтобы он изменял название книги с oldName на newName в свойстве books. Используй indexOf() для того, чтобы найти нужный элемент массива, и splice() для того чтобы заменить этот элемент
+//Онлайн бибилиотеке необходимо отображать книги сортированные по дате издания, по её возрастанию или убыванию. Дополни код так, чтобы в переменной ascendingReleaseDates получилась отсортированная по возрастанию копия массива releaseDates, а в переменной descendingReleaseDates копия отсортированная по убыванию.
 
-// const bookShelf = {
-//   books: ['The last kingdom', 'Haze', 'The guardian of dreams'],
-//   updateBook(oldName, newName) {
-//     // Change code below this line
-// 	const bookIndex = this.books.indexOf(oldName);
-//     this.books.splice(bookIndex, 1, newName);
-	
-	
-//     // Change code above this line
-//   },
-// };
+// const releaseDates = [2016, 1967, 2008, 1984, 1973, 2012, 1997];
+// // Пиши код ниже этой строки
+
+// const ascendingReleaseDates = [...releaseDates].sort((a,b) => a-b);
+
+// const descendingReleaseDates = [...releaseDates].sort((a,b) => b-a);
 
 
 //Задание 36
 
-//К нам обратилась владелица лавки зелий «У старой жабы» и заказала программу для ведения инвентаря - добавления, удаления, поиска и обновления зелий. Добавь объекту atTheOldToad свойство potions, значением которого сделай пустой массив.
+//Онлайн бибилиотеке необходимо отображать книги отсортированные по автору, в алфавитном и обратном алфавитном порядке. Дополни код так, чтобы в переменной authorsInAlphabetOrder получилась отсортированная по алфавиту копия массива authors, а в переменной authorsInReversedOrder копия отсортированная в обратном алфавитном порядке.
 
-// const atTheOldToad = {
-//   // Change code below this line
-//   potions: []
+
+// const authors = [
+//     'Ли Танит',
+//     'Бернард Корнуэлл',
+//     'Роберт Шекли',
+//     'Федор Достоевский',
+//     'Говард Лавкрафт'
+//   ];
+//   // Пиши код ниже этой строки
   
-//   // Change code above this line
-// };
+//   const authorsInAlphabetOrder = [...authors].sort((a,b) => a.localeCompare(b));
+  
+//   const authorsInReversedOrder = [...authors].sort((a,b) => b.localeCompare(a));
 
 
-//Задание 37
+// Задание 37
 
-//Добавь объекту atTheOldToad метод getPotions(), который просто возвращает значение свойства potions.
+// Дополни код так, чтобы:
 
-// const atTheOldToad = {
-//   // Change code below this line
-//   potions: ['Speed potion', 'Dragon breath', 'Stone skin'],
-//   getPotions() {
-//   return this.potions;}
-//     // Change code above this line
-// };
+//     В переменной sortedByAuthorName получился массив книг отсортированный по имени автора в алфавитном порядке.
+//     В переменной sortedByReversedAuthorName получился массив книг отсортированный по имени автора в обратном алфавитном порядке.
+//     В переменной sortedByAscendingRating получился массив книг отсортированный по возрастанию рейтинга.
+//     В переменной sortedByDescentingRating получился массив книг отсортированный по убыванию рейтинга.
+
+// const books = [
+//   { title: 'Последнее королевство', author: 'Бернард Корнуэлл', rating: 8.38 },
+//   { title: 'На берегу спокойных вод', author: 'Роберт Шекли', rating: 8.51 },
+//   { title: 'Сон смешного человека', author: 'Федор Достоевский', rating: 7.75 },
+//   { title: 'Красна как кровь', author: 'Ли Танит', rating: 7.94 },
+//   { title: 'Враг Божий', author: 'Бернард Корнуэлл', rating: 8.67 }
+// ];
+// // Пиши код ниже этой строки
+
+// const sortedByAuthorName = [...books].sort((a,b) => a.author.localeCompare(b.author));
+
+// const sortedByReversedAuthorName = [...books].sort((a,b) => b.author.localeCompare(a.author));
+
+// const sortedByAscendingRating = [...books].sort((a,b) => a.rating - b.rating);
+
+// const sortedByDescentingRating = [...books].sort((a,b) => b.rating - a.rating);
 
 
 //Задание 38
 
-//Дополни метод addPotion(potionName) так, чтобы он добавлял зелье potionName в конец массива зелий в свойстве potions.
+//Дополни функцию sortByAscendingBalance(users) так, чтобы она возвращала массив пользователей отсортированный по возрастанию их баланса (свойство balance).
 
-// const atTheOldToad = {
-//   potions: ['Speed potion', 'Dragon breath', 'Stone skin'],
-//   addPotion(potionName) {
-//     // Change code below this line
-//     this.potions.push(potionName);
-//     // Change code above this line
-//   },
+// // Пиши код ниже этой строки
+// const sortByAscendingBalance = users => {
+//   return [...users].sort((a,b) => a.balance - b.balance) 
 // };
+// // Пиши код выше этой строки
 
-// const atTheOldToad = {
-//   potions: ["Speed potion", "Dragon breath", "Stone skin"],
-//   removePotion(potionName) {
-//     // Change code below this line
-//     let indexPotion = this.potions.indexOf(potionName);
-//   this.potions.splice(indexPotion, 1); 
-//     return this.potions;
-//     // Change code above this line
-//   },
+
+//Задание 39
+
+//Дополни функцию sortByDescendingFriendCount(users) так, чтобы она возвращала массив пользователей отсортированный по убыванию количества их друзей (свойство friends).
+
+// // Пиши код ниже этой строки
+// const sortByDescendingFriendCount = users => {
+//  return [...users].sort((a,b) => b.friends.length - a.friends.length);  
 // };
+// // Пиши код выше этой строки
 
 
 //Задание 40
 
-//Дополни метод updatePotionName(oldName, newName) так, чтобы он обновлял название зелья с oldName на newName, в массиве зелий в свойстве potions.
+//Дополни функцию sortByName(users) так, чтобы она возвращала массив пользователей отсортированный по их имени (свойство name) в алфавитном порядке.
 
-// const atTheOldToad = {
-//   potions: ['Speed potion', 'Dragon breath', 'Stone skin'],
-//   updatePotionName(oldName, newName) {
-//     // Change code below this line
-//    const potionIndex = this.potions.indexOf(oldName);
-//      this.potions.splice(potionIndex, 1, newName); 
-//     // Change code above this line
-//   },
+// // Пиши код ниже этой строки
+// const sortByName = users => {
+//  return [...users].sort((a,b) => a.name.localeCompare(b.name));  
 // };
+// // Пиши код выше этой строки
+
+
+// Цепочки методов (чейнинг, chaining)
+
+// Есть массив объектов с именами, баллами и посещаемыми предметами каждого студента.
+
+// const students = [
+//   { name: 'Манго', score: 83, courses: ['математика', 'физика'] },
+//   { name: 'Поли', score: 59, courses: ['информатика', 'математика'] },
+//   { name: 'Аякс', score: 37, courses: ['физика', 'биология'] },
+//   { name: 'Киви', score: 94, courses: ['литература', 'информатика'] },
+// ];
+
+// Необходимо получить массив их имён отсортированный по возрастанию баллов за тест. Для этого мы отсортируем копию массива методом sort(), после чего методом map() составим массив значений свойства name из сортированного массива.
+
+// const sortedByAscendingScore = [...students].sort((a, b) => a.score - b.score);
+// const names = sortedByAscendingScore.map((student) => student.name);
+
+// console.log(names); // ['Аякс', 'Поли', 'Манго', 'Киви']
+
+// Проблема в том, что у нас появляются промежуточные переменные после каждой операции кроме финальной. Переменная sortedByAscendingScore лишняя и необходима только для хранения промежуточного результата.
+
+// Избавиться от таких «мёртвых» переменных можно группируя вызовы методов в цепочки. Каждый следующий метод будет выполняться на результате работы предыдущего.
+
+// const names = [...students]
+//   .sort((a, b) => a.score - b.score)
+//   .map((student) => student.name);
+
+// console.log(names); // ['Аякс', 'Поли', 'Манго', 'Киви']
+
+//     Делаем копию исходного массива перед сортировкой.
+//     На копии вызываем метод sort().
+//     К результату работы метода sort() применяем метод map().
+//     Переменной names присваивается результат работы метода map().
+
+// Получим сортированный по алфавиту массив уникальных посещаемых предметов.
+
+// const uniqueSortedCourses = students
+//   .flatMap((student) => student.courses)
+//   .filter((course, index, array) => array.indexOf(course) === index)
+//   .sort((a, b) => a.localeCompare(b));
+
+// console.log(uniqueSortedCourses); // ['биология', 'информатика', 'литература', 'математика', 'физика']
+
+//     На исходном массиве вызываем flatMap() и делаем разглаженный массив всех курсов.
+//     К результату метода flatMap() применяем метод filter() для фильтрации уникальных элементов.
+//     На результате метода filter() вызываем sort().
+//     Переменной uniqueSortedCourses присваивается результат работы метода sort().
+
+// Цепочка методов может быть произвольной длины, но обычно не более 2-3 операций. Во-первых, перебирающие методы используются для сравнительно простых операций над коллекцией. Во-вторых, вызов каждого последующего метода, это дополнительный перебор массива, что при достаточном количестве, может сказаться на производительности.
+
 
 
 // Задание 41
 
-// Заказчица хочет чтобы каждое зелье было представлено не только именем, но и ценой, а в будущем может быть и другими характеристиками. Поэтому теперь в свойстве potions будет храниться массив объектов со следующими свойствами.
+// Дополни код так, чтобы в переменной names получился массив имён авторов в алфавитном порядке, рейтинг книг которых больше значения переменной MIN_BOOK_RATING.
 
-// {
-//   name: "Dragon breath",
-//   price: 700
-// }
+// const books = [
+//   { title: 'Последнее королевство', author: 'Бернард Корнуэлл', rating: 8.38 },
+//   { title: 'На берегу спокойных вод', author: 'Роберт Шекли', rating: 8.51 },
+//   { title: 'Сон смешного человека', author: 'Федор Достоевский', rating: 7.75 },
+//   { title: 'Красна как кровь', author: 'Ли Танит', rating: 8.14 },
+//   { title: 'Сны В Ведьмином Доме', author: 'Говард Лавкрафт', rating: 8.67 }
+// ];
+// const MIN_BOOK_RATING = 8;
+// // Пиши код ниже этой строки
 
-// Выполни рефакторинг методов объекта atTheOldToad так, чтобы они работали не с массивом строк, а с массивом объектов.
+// const names = [...books].filter(book => book.rating >= MIN_BOOK_RATING).map((book) => book.author)
+// .sort((a,b) => a.localeCompare(b));
 
-//     getPotions() - метод для получения всех зелий. Возвращает значение свойства potions.
-//     addPotion(newPotion) - добавляет зелье newPotion (уже объект) в массив в свойстве potions.
-//     removePotion(potionName) - удаляет объект зелья с именем potionName из массива в свойстве potions.
-//     updatePotionName(oldName, newName) - обновляет свойство name объекта-зелья с названием oldName на newName в массиве potions.
 
-// const atTheOldToad = {
-//   potions: [
-//     { name: 'Speed potion', price: 460 },
-//     { name: 'Dragon breath', price: 780 },
-//     { name: 'Stone skin', price: 520 },
-//   ],
-//   // Change code below this line
-//   getPotions() {
-//     return this.potions;
-//   },
-//   addPotion(potionName) {
-//     if (this.potions.includes(potionName)) {
-//       return `Potion ${potionName} is already equipped!`;
-//     }
+//Задание 42
 
-//     this.potions.push(potionName);
-//   },
-//   removePotion(potionName) {
-//     for(let i=0; i < this.potions.length; i += 1) {
-//     	if(this.potions[i].name === potionName) {
-//         	this.potions.splice(i, 1)
-//         }
-//     }
-//   },
- 
-//   updatePotionName(oldName, newName) {
-//      for(let i=0; i < this.potions.length; i += 1) {
-//     	if(this.potions[i].name === oldName) {
-//           this.potions[i].name = newName
-//         //this.potions.splice(i, 1, {name: newName, price: 0})
-//         }
-//     }
-   
-//   },
-//   // Change code above this line
+//Дополни функцию getNamesSortedByFriendCount(users) так, чтобы она возвращала массив имён пользователей отсортированный по возрастанию количества их друзей (свойство friends).
+
+// // Пиши код ниже этой строки
+// const getNamesSortedByFriendCount = users => {
+//  const names = [...users]
+//  .sort((a,b) => a.friends.length - b.friends.length)
+//  .map((user) => user.name);
+//  return names;  
 // };
-// console.log(atTheOldToad.updatePotionName("Stone skin", "Invulnerability potion"));
+// // Пиши код выше этой строки
+
+
+//Задание 43
+
+//Дополни функцию getSortedFriends(users) так, чтобы она возвращала массив уникальных имён друзей (свойство friends) отсортированный по алфавиту .
+
+// // Пиши код ниже этой строки
+// const getSortedFriends = users => {
+//   const names = [...users]
+//   .flatMap((user) => user.friends)
+//   .filter((friend, index, array) => array.indexOf(friend) === index)
+//   .sort((a,b) => a.localeCompare(b));
+//  return names;  
+// };
+// // Пиши код выше этой строки
+
+
+//Задание 44
+
+//Дополни функцию getTotalBalanceByGender(users, gender) так, чтобы она возвращала общий баланс пользователей (свойство balance), пол которых (свойство gender) совпадает со значением параметра gender.
+
+// // Пиши код ниже этой строки
+// const getTotalBalanceByGender = (users, gender) => {
+//   const sumBalance = [...users]
+//   .filter(user => user.gender === gender)
+//   .reduce((acc, user) => acc + user.balance, 0);
+//   return sumBalance;
+// };
+// // Пиши код выше этой строки
+
+
